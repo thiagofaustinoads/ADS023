@@ -236,7 +236,7 @@ l) Dentro da segunda divisão adicione um rótulo e um campo de seleção para a
 m) Dentro da terceira divisão adicione um rótulo e um campo de texto para a argumentação.
 
 <label for="inputArgumentacao">Argumentação</label>
-<textarea class="form-control" id="inputArgumentacao" required>
+<textarea class="form-control" id="inputArgumentacao" required></textarea>
 
 n) Adicione ao formulário um botão submit e um link Desistir.
 
