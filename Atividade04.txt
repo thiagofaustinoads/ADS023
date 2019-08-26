@@ -6,7 +6,7 @@ b) Selecione a pasta ADS023 e abra o terminal pressionando CTRL+'.
 
 c) Crie um novo projeto Ionic chamado Atividade04 usando o template em branco.
 
-d) Altere o conte˙do da home.page.html para exibir um lista n„o ordenada de sete links.
+d) Altere o conte√∫do da home.page.html para exibir um lista n√£o ordenada de sete links.
 
 <ion-content>
   <h2>Tipos de Layout no Ionic</h2>
@@ -16,31 +16,31 @@ d) Altere o conte˙do da home.page.html para exibir um lista n„o ordenada de sete
   </ul>
 </ion-content>
 
-e) FaÁa o primeiro link referenciar a p·gina Header Layout.
+e) Fa√ßa o primeiro link referenciar a p√°gina Header Layout.
 
 <a href="/header">Header Layout</a>
 
-f) FaÁa o segundo link referenciar a p·gina Footer Layout.
+f) Fa√ßa o segundo link referenciar a p√°gina Footer Layout.
 
 <a href="/footer">Footer Layout</a>
 
-g) FaÁa o terceiro link referenciar a p·gina Tabs Layout.
+g) Fa√ßa o terceiro link referenciar a p√°gina Tabs Layout.
 
 <a href="/tabs">Tabs Layout</a>
 
-h) FaÁa o quarto link referenciar a p·gina Menu Layout.
+h) Fa√ßa o quarto link referenciar a p√°gina Menu Layout.
 
 <a href="/menu">Menu Layout</a>
 
-i) FaÁa o quinto link referenciar a p·gina Split Pane Layout.
+i) Fa√ßa o quinto link referenciar a p√°gina Split Pane Layout.
 
 <a href="/split">Split Pane Layout</a>
 
-j) FaÁa o sexto link referenciar a p·gina Grid Layout.
+j) Fa√ßa o sexto link referenciar a p√°gina Grid Layout.
 
 <a href="/grid">Grid Layout</a>
  
-k) FaÁÁa o sÈtimo link referenciar a p·gina List Layout.
+k) Fa√ß√ßa o s√©timo link referenciar a p√°gina List Layout.
 
 <a href="/list">List Layout</a>
 
@@ -52,9 +52,9 @@ l) Execute o projeto com o comando serve.
 
 a) Abra outro terminal no VSCode.
 
-b) Adicione uma p·gina chamada header ao projeto.
+b) Adicione uma p√°gina chamada header ao projeto.
 
-c) Altere o conte˙do do arquivo header.page.html para usar o Header Layout.
+c) Altere o conte√∫do do arquivo header.page.html para usar o Header Layout.
 
 <ion-header>
 </ion-header>
@@ -62,20 +62,20 @@ c) Altere o conte˙do do arquivo header.page.html para usar o Header Layout.
 <ion-content>
 </ion-content>
 
-d) Dentro do cabeÁalho adicione uma barra de ferramenta. Defina a propriedade color como primary.
+d) Dentro do cabe√ßalho adicione uma barra de ferramenta. Defina a propriedade color como primary.
 
 <ion-toolbar color="primary">
 </ion-toolbar>
 
-e) Dentro da barra de ferramenta adicione um tÌtulo. Atribua o texto "TÌtulo".
+e) Dentro da barra de ferramenta adicione um t√≠tulo. Atribua o texto "T√≠tulo".
 
-<ion-title>TÌtulo</ion-title>
+<ion-title>T√≠tulo</ion-title>
 
-f) Dentro do conte˙do adicione um par·grafo. Atribua o texto "P·gina criada com Header Layout".
+f) Dentro do conte√∫do adicione um par√°grafo. Atribua o texto "P√°gina criada com Header Layout".
 
-g) Adicione uma p·gina footer ao projeto.
+g) Adicione uma p√°gina footer ao projeto.
 
-h) Altere o conte˙do do arquivo footer.page.html para usar o Footer Layout.
+h) Altere o conte√∫do do arquivo footer.page.html para usar o Footer Layout.
 
 <ion-content>
 </ion-content>
@@ -83,19 +83,19 @@ h) Altere o conte˙do do arquivo footer.page.html para usar o Footer Layout.
 <ion-footer>
 </ion-footer>
 
-i) Dentro do conte˙do adicione um par·grafo. Atribua o texto "P·gina criada com Footer Layout".
+i) Dentro do conte√∫do adicione um par√°grafo. Atribua o texto "P√°gina criada com Footer Layout".
 
-j) Dentro do rodapÈ adicione uma barra de ferramenta. Atribua a propriedade color como secondary. 
+j) Dentro do rodap√© adicione uma barra de ferramenta. Atribua a propriedade color como secondary. 
 
-k) Dentro da barra de ferramenta adicione um tÌtulo. Atribua o texto "TÌtulo".
+k) Dentro da barra de ferramenta adicione um t√≠tulo. Atribua o texto "T√≠tulo".
 
 
 
 3. Trabalhar com Tabs Layout
 
-a) Adicione uma p·gina tabs ao projeto.
+a) Adicione uma p√°gina tabs ao projeto.
 
-b) Altere o conte˙do do arquivo tabs.page.html para usar o Tabs Layout.
+b) Altere o conte√∫do do arquivo tabs.page.html para usar o Tabs Layout.
 
 <ion-tabs>
 </ion-tabs>
@@ -105,73 +105,73 @@ c) Dentro do leiaute adicione uma barra de abas. Atribua a propriedade slot como
 <ion-tab-bar slot="top" color="tertiary">
 </ion-tab-bar>
 
-d) Dentro do leiaute adicione um conte˙do com um par·grafo "P·gina criada com Tabs Layout."
+d) Dentro do leiaute adicione um conte√∫do com um par√°grafo "P√°gina criada com Tabs Layout."
 
 e) Dentro do leiaute adicione outra barra de abas. Atribua a propriedade slot como bottom e a propriedade color como tertiary. 
 
 <ion-tab-bar slot="botom" color="tertiary">
 </ion-tab-bar>
 
-f) Dentro da primeira barra adicione trÍs botıes de aba. 
+f) Dentro da primeira barra adicione tr√™s bot√µes de aba. 
 
 <ion-tab-button>
 </ion-tab-button>
 
-g) Dentro do primeiro bot„o adicione um rÛtulo "Aba 1".
+g) Dentro do primeiro bot√£o adicione um r√≥tulo "Aba 1".
 
 <ion-label>Aba 1</ion-label>
 
-h) Dentro do segundo bot„o adicione um rÛtulo "Aba 2". 
+h) Dentro do segundo bot√£o adicione um r√≥tulo "Aba 2". 
 
-i) Dentro do terceiro bot„o adicione um rÛtulo "Aba 3".
+i) Dentro do terceiro bot√£o adicione um r√≥tulo "Aba 3".
 
-j) Dentro da segunda barra adicione dois botıes de aba.
+j) Dentro da segunda barra adicione dois bot√µes de aba.
 
-k) Dentro do primeiro bot„o adicione um rÛtulo "Aba 4" e um Ìcone (Dica: Procurar um Ìcone na p·gina https://ionicons.com/).
+k) Dentro do primeiro bot√£o adicione um r√≥tulo "Aba 4" e um √≠cone (Dica: Procurar um √≠cone na p√°gina https://ionicons.com/).
 
 <ion-icon name="home"></ion-icon>
 <ion-label>Aba 4</ion-label>
 
-l) Dentro do segundo bot„o adicione um rÛtulo "Aba 5" e um Ìcone.
+l) Dentro do segundo bot√£o adicione um r√≥tulo "Aba 5" e um √≠cone.
 
 
 
 4. Trabalhar com Menu Layout
 
-a) Adicione uma p·gina menu ao projeto.
+a) Adicione uma p√°gina menu ao projeto.
 
-b) Altere o conte˙do do arquivo menu.page.html para usar o Menu Layout.
+b) Altere o conte√∫do do arquivo menu.page.html para usar o Menu Layout.
 
 <ion-menu>
 </ion-menu>
 
-c) Dentro do leiaute adicione um cabecalho e um conte˙do.
+c) Dentro do leiaute adicione um cabecalho e um conte√∫do.
 
-d) Dentro do cabeÁalho adicione um barra de ferramenta. Atribua a propriedade color como success.
+d) Dentro do cabe√ßalho adicione um barra de ferramenta. Atribua a propriedade color como success.
 
-e) Dentro da barra de ferramenta adicione um tÌtulo "Menu".
+e) Dentro da barra de ferramenta adicione um t√≠tulo "Menu".
 
-f) Dentro do conte˙do adicione trÍs itens.
+f) Dentro do conte√∫do adicione tr√™s itens.
 
 <ion-item></ion-item>
 
-g) Adicione no primeiro item um Ìcone e um rÛtulo "Item 1".
+g) Adicione no primeiro item um √≠cone e um r√≥tulo "Item 1".
 
-h) Adicione no segundo item um Ìcone e um rÛtulo "Item 2".
+h) Adicione no segundo item um √≠cone e um r√≥tulo "Item 2".
 
-i) Adicione no terceiro item um Ìcone e um rÛtulo "Item 3".
+i) Adicione no terceiro item um √≠cone e um r√≥tulo "Item 3".
 
-j) Fora do leiaute adicione um cabecalho e um conte˙do.
+j) Fora do leiaute adicione um cabecalho e um conte√∫do.
 
-k) Dentro do cabeÁalho adicione um barra de ferramenta. Atribua a propriedade color como warning.
+k) Dentro do cabe√ßalho adicione um barra de ferramenta. Atribua a propriedade color como warning.
 
-l) Adicione na barra de ferramenta um bot„o de menu. Atribua a propriedade slot como start.
+l) Adicione na barra de ferramenta um bot√£o de menu. Atribua a propriedade slot como start.
 
 <ion-menu-button slot="start"></ion-menu-button>
 
-m) Adicione no conte˙do um par·grafo "P·gina criada com Menu Layout".
+m) Adicione no conte√∫do um par√°grafo "P√°gina criada com Menu Layout".
 
-n) Entre o menu layout e o cabeÁalho adicione um elemento ion-router-outler.
+n) Entre o menu layout e o cabe√ßalho adicione um elemento ion-router-outler.
 
 <ion-router-outlet main></ion-router-outlet>
 
@@ -179,30 +179,30 @@ n) Entre o menu layout e o cabeÁalho adicione um elemento ion-router-outler.
 
 5. Trabalhar com Split Pane Layout
 
-a) Adicione uma p·gina split ao projeto.
+a) Adicione uma p√°gina split ao projeto.
 
-b) Altere o conte˙do do arquivo split.page.html para usar o Split Pane Layout.
+b) Altere o conte√∫do do arquivo split.page.html para usar o Split Pane Layout.
 
 <ion-split-pane>
 </ion-split-pane>
 
-c) Dentro do leiaute adicione um menu e um conte˙do.
+c) Dentro do leiaute adicione um menu e um conte√∫do.
 
-d) Dentro do menu adicione um cabeÁalho e um conte˙do.
+d) Dentro do menu adicione um cabe√ßalho e um conte√∫do.
 
-e) Dentro do cabeÁalho adicione uma barra de ferramenta. Atribua a propriedade color como danger.
+e) Dentro do cabe√ßalho adicione uma barra de ferramenta. Atribua a propriedade color como danger.
 
-f) Dentro da barra adicione um tÌtulo. Atribua o texto "Painel Lateral".
+f) Dentro da barra adicione um t√≠tulo. Atribua o texto "Painel Lateral".
 
-g) Dentro do conte˙do adicione trÍs itens. FaÁa cada item ter um rÛtulo.
+g) Dentro do conte√∫do adicione tr√™s itens. Fa√ßa cada item ter um r√≥tulo.
 
-h) Dentro do conte˙do fora do menu adicione um cabeÁalho e um par·grafo.
+h) Dentro do conte√∫do fora do menu adicione um cabe√ßalho e um par√°grafo.
 
-i) Dentro do cabeÁalho adicione uma barra de ferramenta. Atribua a propriedade color como light.
+i) Dentro do cabe√ßalho adicione uma barra de ferramenta. Atribua a propriedade color como light.
 
-j) Dentro da barra adicione um tÌtulo. Atribua o texto "Painel Principal".
+j) Dentro da barra adicione um t√≠tulo. Atribua o texto "Painel Principal".
 
-k) Atribua ao par·grafo o texto "P·gina criada com Split Pane Layout".
+k) Atribua ao par√°grafo o texto "P√°gina criada com Split Pane Layout".
 
 l) Atribua a propriedade main ao conteudo fora do menu.
 
@@ -210,9 +210,9 @@ l) Atribua a propriedade main ao conteudo fora do menu.
 
 5. Trabalhar com Grid Layout
 
-a) Adicione uma p·gina grid ao projeto.
+a) Adicione uma p√°gina grid ao projeto.
 
-b) Altere o conte˙do do arquivo grid.page.html para usar o Grid Layout.
+b) Altere o conte√∫do do arquivo grid.page.html para usar o Grid Layout.
 
 <ion-grid>
 </ion-grid>
@@ -223,25 +223,49 @@ c) Adicione no grid uma linha e uma coluna.
    <ion-col></ion-col>
 <ion-row>
 
-d) Adicione no grid uma linha com duas colunas.
+d) Dentro da coluna adicione uma barra de ferramenta. Atribua a propriedade color como medium.
 
-e) Adicione no grid uma linha com trÍs colunas.
+e) Dentro da barra adicione um t√≠tulo. Atribua o texto "T√≠tulo".
+
+f) Adicione no grid outra linha com um coluna.
+
+g) Dentro da coluna adicione um par√°grafo. Atribua o texto "P√°gina criada com Grid Layout".
+
+h) Adicione no grid uma linha com duas colunas. Atribua na primeira coluna o texto "1 de 2" e na segunda "2 de 2".
+
+i) Adicione no grid uma linha com tr√™s colunas. Atribua na primeira coluna o texto "1 de 3", na segunda "2 de 3" e na terceira "3 de 3".
+
+j) Adicione no grid uma linha com quatro colunas. Atribua na primeira coluna o texto "1 de 4", na segunda "2 de 4", na terceira "3 de 4" e na quarta "4 de 4".
+
+k) Adicione no grid uma linha com cinco colunas. Atribua na primeira coluna o texto "1 de 5", na segunda "2 de 5", na terceira "3 de 5", na quarta "4 de 5" e na quinta "5 de 5".
+
+l) Atribua a propriedade fixed ao grid.
 
 
 
 6. Trabalhar com List Layout
 
-a) Adicione uma p·gina list ao projeto.
+a) Adicione uma p√°gina list ao projeto.
 
-b) Altere o conte˙do do arquivo list.page.html para usar o List Layout.
+b) Altere o conte√∫do do arquivo list.page.html para usar o List Layout.
 
 <ion-list>
 </ion-list>
 
-c) Dentro do leiaute adicione um cabeÁalho.
+c) Dentro do leiaute adicione uma barra de ferramenta. Atribua a propriedade color como dark.
 
-d) Adicione trÍs itens.
+d) Dentro da barra adicione um t√≠tulo. Atribua o texto T√≠tulo.
 
-t) Adicione os arquivos no git local e faÁa o commit com o coment·rio "Criando projeto Atividade04".
+e) Dentro do leiaute adicione um cabe√ßalho de lista.
 
-u) Envie os arquivos versionados para o git remoto.
+f) Dentro do cabe√ßalho adicione um r√≥tulo. Atribua o texto "P√°gina criada com List Layout".
+
+g) Dentro do leiaute adicione 15 itens.
+
+h) Fa√ßa cada item receber o texto "Item n", onde n √© o numero do item.
+
+i) Envolva o leiaute dentro de um conte√∫do.
+
+j) Efetive o commit acionando a op√ß√£o Commit All. N√£o esque√ßa de por um coment√°rio ao commit (Ex.: Criando o projeto Atividade04).
+
+k) Envie os arquivos versionados para o git remoto acionando a op√ß√£o Push. Informe usu√°rio/senha e acione a op√ß√£o Sign in.
