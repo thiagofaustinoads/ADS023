@@ -144,7 +144,7 @@ r) Acrescente a propriedade notas do tipo Nota[]. Faça o método ngOnInit() ini
 
 this.notas = notasSevice.getNotas();
 
-s) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade01).
+s) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade03).
 
 t) Envie os arquivos versionados para o git remoto acionando a opção Push. Informe usuário/senha e acione a opção Sign in.
 
