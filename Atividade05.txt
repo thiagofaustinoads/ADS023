@@ -1,0 +1,21 @@
+1. Criar um projeto usando Ionic CLI.
+
+a) Abra o aplicativo VSCode.
+
+b) Selecione a pasta ADS023 e abra o terminal pressionando CTRL+'.
+
+c) Crie um novo projeto Ionic chamado Atividade05 usando o template em branco.
+
+e) Remova a pasta da página home do projeto.
+
+f) Aju
+
+d) Execute o projeto com o comando serve.
+
+
+
+
+
+j) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade04).
+
+k) Envie os arquivos versionados para o git remoto acionando a opção Push. Informe usuário/senha e acione a opção Sign in.
