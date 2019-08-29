@@ -8,7 +8,7 @@ c) Crie um novo projeto Ionic chamado Atividade05 usando o template em branco.
 
 e) Remova a pasta da página home do projeto.
 
-f) Aju
+f) Ajuste as rotas removendo
 
 d) Execute o projeto com o comando serve.
 
