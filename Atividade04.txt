@@ -40,7 +40,7 @@ j) Faça o sexto link referenciar a página Grid Layout.
 
 <a href="/grid">Grid Layout</a>
  
-k) Façça o sétimo link referenciar a página List Layout.
+k) Faça o sétimo link referenciar a página List Layout.
 
 <a href="/list">List Layout</a>
 
