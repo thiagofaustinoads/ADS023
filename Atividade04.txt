@@ -1,4 +1,4 @@
-1) Criar um projeto usando Ionic CLI.
+1. Criar um projeto usando Ionic CLI.
 
 a) Abra o aplicativo VSCode.
 
@@ -208,7 +208,7 @@ l) Atribua a propriedade main ao conteudo fora do menu.
 
 
 
-5. Trabalhar com Grid Layout
+6. Trabalhar com Grid Layout
 
 a) Adicione uma página grid ao projeto.
 
@@ -243,7 +243,7 @@ l) Atribua a propriedade fixed ao grid.
 
 
 
-6. Trabalhar com List Layout
+7. Trabalhar com List Layout
 
 a) Adicione uma página list ao projeto.
 
