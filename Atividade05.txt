@@ -6,15 +6,71 @@ b) Selecione a pasta ADS023 e abra o terminal pressionando CTRL+'.
 
 c) Crie um novo projeto Ionic chamado Atividade05 usando o template em branco.
 
-e) Remova a pasta da página home do projeto.
+d) Execute o projeto criado.
 
-f) Ajuste as rotas removendo
-
-d) Execute o projeto com o comando serve.
+e) Abra outro termina no VSCode.
 
 
 
+2. Simular a navegação de páginas no Ionic.
 
+a) Crie uma página chamada login.
+
+b) Faça a página login ser exibida através da rota raiz (Dica: alterar a propriedade redirectTo da rota '' no arquivo app-routing.module.ts).
+
+c) Adicione na página login um ion-button ENTRAR para acessar a página home. Atribua a diretiva [routerLink] o valor '/home'. 
+
+d) Adicione na página home um ion-button SAIR para acessar a página login. Atribua a diretiva [routerLink] o valor ''.
+
+e) No navegador acione os botões para acessar as páginas da aplicação. Qual foi o resultado? 
+
+f) Crie uma página chamada detalhes.
+
+g) Adicione na barra de ferramentas da página detalhes um ion-back-button.
+
+h) Adicione um parâmetro id na rota '/detalhes'.
+
+i) Adicione na página home um io-button DETALHES para acessar página detalhes. Atribua a diretiva [routerLink] o valor '/detalhes/42'.
+
+j) No navegador acione os botões para navegar entre as páginas. Qual foi o resultado? 
+
+k) Adicione na página detalhes um ion-label para exibir o valor do parâmetro id (Dica: use a interpolação {{ id }}).
+
+l) Adicione na classe DetalhesPageModule um atributo id inicializando com null.
+
+m) Injete no construtor da classe DetalhesPageModule um atributo privado activatedRoute do tipo activatedRoute. 
+
+n) No método ngOnInit() faça o atributo id receber o valor do parâmetro da rota.
+
+this.id = this.activatedRoute.snapshot.paramMap.get('id');
+
+o) No navegador acione os botões para navegar entre as páginas. Qual foi o resultado? 
+
+
+
+3. Simular a navegação de abas no Ionic.
+
+a) Adicione uma página abas ao projeto.
+
+b) Altere o conteúdo do arquivo abas.page.html para usar o Tabs Layout.
+
+c) Adicione as páginas aba1, aba2 e aba3 sendo filhas de abas (Dica: informar a pasta abas no nome da página).
+
+d) trabalhar as rotas filhas para aba1, aba2 e aba3.
+
+d) Adicione na página home um ion-button ABAS para acessar a página abas. Atribua a diretiva [routerLink] o valor '/abas'.
+
+o) No navegador acione os botões para navegar entre as páginas. Qual foi o resultado? 
+
+
+
+4. Criar guarda de rota no Ionic.
+
+criar um guarda
+
+criar um serviço que vai ter atributo autenticado
+
+alterar as rotas para ter o guarda
 
 j) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade04).
 
