@@ -116,7 +116,7 @@ m) No navegador acione os botões para navegar entre as páginas. Qual foi o res
 
 a) Crie um servico chamado auth (Dica: ionic generate service auth).
 
-b) Dentro da classe AuthService declare o atributo privado autenticado inicializando com false.
+b) Dentro da classe AuthService declare o atributo estático autenticado inicializando com false (Dica: static autenticado: boolean = false;).
 
 c) Dentro da classe AuthService declare o método login(). Faça ele alterar o atributo autenticado para true.
 
