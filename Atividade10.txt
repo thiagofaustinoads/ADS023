@@ -1,0 +1,18 @@
+1. Criar um projeto usando Ionic CLI.
+
+a) Abra o aplicativo VSCode.
+
+b) Selecione a pasta ADS023 e abra o terminal pressionando CTRL+'.
+
+c) Crie um novo projeto Ionic chamado Atividade10 usando o template em branco.
+
+d) Execute o projeto criado.
+
+e) Abra outro terminal no VSCode.
+
+
+Fazer uso de API Nativa de Camera
+
+Criar uma chamada a serviço de login
+
+
