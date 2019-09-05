@@ -8,7 +8,7 @@ c) Crie um novo projeto Ionic chamado Atividade06 usando o template em branco.
 
 d) Execute o projeto criado.
 
-e) Abra outro termina no VSCode.
+e) Abra outro terminal no VSCode.
 
 
 
