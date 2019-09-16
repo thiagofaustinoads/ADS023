@@ -98,13 +98,13 @@ mensagens_validacao = {}
 
 f) Adicione no atributo mensagens_validacao uma propriedade que represente a mensagem de validação de um dado campo (Dica: combine o nome do campo com o nome do validador)
 
-'nome_required': 'Nome é obrigatório',
-'nome_minlenght': 'Nome deve conter no mínimo 5 caracteres',
+nome_required: 'Nome é obrigatório',
+nome_minlenght: 'Nome deve conter no mínimo 5 caracteres',
 ...
 
 g) Adicione em cada ion-item da página Contato um ion-note para exibir a mensagem de validação se houver um erro no formulário.
 
-<ion-note color="danger" *ngIf="fomulario.get('nome').hasError('required') && (formulario.get('nome').dirty || fomulario.get('nome').touched)">
+<ion-note slot="end" color="danger" *ngIf="fomulario.get('nome').hasError('required') && (formulario.get('nome').dirty || fomulario.get('nome').touched)">
    <ion-icon name="information-circle-outline"></ion-icon>{{ mensagens_validacao.nome_required }}
 </ion-note>
 
