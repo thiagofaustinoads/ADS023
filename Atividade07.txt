@@ -102,9 +102,9 @@ nome_required: 'Nome é obrigatório',
 nome_minlenght: 'Nome deve conter no mínimo 5 caracteres',
 ...
 
-g) Adicione em cada ion-item da página Contato um ion-note para exibir a mensagem de validação se houver um erro no formulário.
+g) Adicione após cada ion-item da página Contato um ion-note para exibir a mensagem de validação se houver um erro no formulário.
 
-<ion-note slot="end" color="danger" *ngIf="fomulario.get('nome').hasError('required') && (formulario.get('nome').dirty || fomulario.get('nome').touched)">
+<ion-note padding color="danger" *ngIf="fomulario.get('nome').hasError('required') && (formulario.get('nome').dirty || fomulario.get('nome').touched)">
    <ion-icon name="information-circle-outline"></ion-icon>{{ mensagens_validacao.nome_required }}
 </ion-note>
 
