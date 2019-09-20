@@ -16,23 +16,38 @@ e) Abra outro terminal no VSCode.
 
 a) Adicione no conteúdo da página um ion-item.
 
-b) Dentro do ion-item adicione um ion-label e um ion-toogle para ligar e desligar Bluetooth. 
+b) Dentro do ion-item adicione um ion-label e um ion-toogle para ligar e desligar o Bluetooth. 
 
 c) Trate o evento click do ion-toogle para chamar a função ligaBluetooth() passando $event.target.value como parâmetro.
 
 d) Injete no construtor da classe HomePage um atributo privado toastCtrl do tipo ToastController.
 
-e) Dentro da classe HomePage.ts declare um método assíncrono ligaBluetooth() que recebe um parâmetro flag do tipo boolean.
+e) Declare um atributo statusBluetooth do tipo boolean.
 
-f) Dentro do método ligaBluetooth() declare uma constante msg que pode receber o valor "Bluetooth ligado" ou "Bluetooth desligado" dependendo do valor do parâmetro flag.
+f) Dentro da classe HomePage declare um método ligaBluetooth() que recebe um parâmetro status do tipo boolean. Faça o método atualizar o atributo statusBluetoothe com o parâmetro status.
 
-g) Ainda no método ligaBluetooth() declare uma constante toast. Faça ele receber um objeto do método create() de toast.Ctrl (Dica: const toast = await toastCtrl.create({ });).
+g) Declare um método assíncrono exibirToast().
 
-h) 
+h) Dentro do método exibirToast() declare uma constante msg que pode receber o valor "Bluetooth ligado" ou "Bluetooth desligado" dependendo do valor do atributo statusBluetooth.
 
+i) Ainda no método exibirToast() declare uma constante toast que deve receber um objeto Toast gerado pelo método create() de toast.Ctrl. Ela deve exibir a mensagem da constante msg e duração 2000.
 
+const toast = await toastCtrl.create({
+  message: msg,
+  duration: 2000
+});
+
+j) Ainda no método exibirToast() exiba o toast chamando o método present().
+
+K
 
 3. Criar um alerta usando Ionic
 
-a)
+a) Injete no construtor da classe HomePage um atributo privado alertCtrl do tipo AlertController.
 
+b) Dentro da classe HomePage declare um método assíncrono permitirBluetooh().
+
+c) No método permitirBluetooh() declare uma constante alert que deve receber um objeto Alert gerado pelo método create alertCtrl. Ela deve questionar se o usuário quer ligar o Bluetooth do aparelho.
+
+const alert = await alertCtrl.create({
+});
