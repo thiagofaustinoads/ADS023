@@ -12,8 +12,27 @@ e) Abra outro terminal no VSCode.
 
 
 
-Criar um formulário de login 
+2. Criar uma notificação sutil usando Ionic
 
-Criar um forma de cadastro
+a) Adicione no conteúdo da página um ion-item.
 
-Criar um toast e alert
+b) Dentro do ion-item adicione um ion-label e um ion-toogle para ligar e desligar Bluetooth. 
+
+c) Trate o evento click do ion-toogle para chamar a função ligaBluetooth() passando $event.target.value como parâmetro.
+
+d) Injete no construtor da classe HomePage um atributo privado toastCtrl do tipo ToastController.
+
+e) Dentro da classe HomePage.ts declare um método assíncrono ligaBluetooth() que recebe um parâmetro flag do tipo boolean.
+
+f) Dentro do método ligaBluetooth() declare uma constante msg que pode receber o valor "Bluetooth ligado" ou "Bluetooth desligado" dependendo do valor do parâmetro flag.
+
+g) Ainda no método ligaBluetooth() declare uma constante toast. Faça ele receber um objeto do método create() de toast.Ctrl (Dica: const toast = await toastCtrl.create({ });).
+
+h) 
+
+
+
+3. Criar um alerta usando Ionic
+
+a)
+
