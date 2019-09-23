@@ -143,7 +143,7 @@ c) Na pagina home.page.html exiba um botão Listar que vai exibir uma lista de a
 
 d) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade09).
 
-d) Envie os arquivos versionados para o git remoto acionando a opção Push. Informe usuário/senha e acione a opção Sign in.
+e) Envie os arquivos versionados para o git remoto acionando a opção Push. Informe usuário/senha e acione a opção Sign in.
 
 
 
