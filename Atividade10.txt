@@ -11,8 +11,86 @@ d) Execute o projeto criado.
 e) Abra outro terminal no VSCode.
 
 
-Fazer uso de API Nativa de Camera
 
-Criar uma chamada a serviço de login
+2. Fazer uso de API Nativa de Camera.
+
+a) Instale o @ionic-native/camera no projeto.
+
+npm install @ionic-native/camera
+
+b) No arquivo app.module.ts importe o componente Camera.
+
+import { Camera } from '@ionic-native/camera/ngx';
+
+@NgModule({
+  ...
+  providers: [
+    ...
+    Camera
+    ...
+  ]
+  ...
+})
+export class AppModule { }
+
+c) Crie um serviço CameraService através do comando ionic g service database.
+
+d) No arquivo camera.service.ts injete o objeto Camera no construtor e declare um método tirarFoto().
+
+e) Implemente o método tirarFoto() para executar o método getPicture() de camera.
+
+tirarFoto() {
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+      return ‘data:image/jpeg;base64,’ + imageData;
+    }, (err) => {
+     console.log("Camera issue: " + err);
+    });
+  }  
+ 
+f) na página home
+
+<ion-button (click)=”capturar()”> 
+   <ion-text>Capturar</ion-text>
+</ion-button>
+<img src=”{{imagemCapturada}}”/>
+
+g) na classe HomePage injete o CameraSErvico
+
+h) declare um atributo imagemCapturada
+
+i) declare um método capturar que chama capturar.
+
+j) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade09).
+
+k) Envie os arquivos versionados para o git remoto acionando a opção Push. Informe usuário/senha e acione a opção Sign in.
 
 
+
+3. Testar acesso a câmera do dispositivo móvel.
+
+a) Gere um pacote de distribuição do projeto Ionic para ser implantado em um servidor Web (Dica: ionic build).
+
+b) Adicione a plataforma android com o comando capacitor (Dica: ioni capacitor add). Qual foi o resultado?
+
+c) Abra o aplicativo Android Studio.
+
+d) Escolha a opção Open Project. Selecione a pasta android gerada pelo capacitor.
+
+e) Verifique se o Gradle executou o build do projeto. Caso contrário, acione o menu Build->Make Project.
+
+f) Conecte um dispositivo a sua estação de trabalho via USB. Aceite a permissão solicitada pelo dispositivo.
+
+g) Inicie a execução do projeto. Verifique se o seu dispositivo apareceu na janela Select Deployment Target.
+
+h) Selecione o disposito e clique em Ok. 
+
+i) Aceite a instalação do Android SDK corresponte ao dispositivo. O app foi instalado no dispositivo?
+
+j) Interrompa a execução do projeto e remova o app do dispositivo.
