@@ -48,26 +48,26 @@ tirarFoto() {
     }
 
     this.camera.getPicture(options).then((imageData) => {
-      return ‘data:image/jpeg;base64,’ + imageData;
+      return 'data:image/jpeg;base64,' + imageData;
     }, (err) => {
      console.log("Camera issue: " + err);
     });
   }  
  
-f) na página home
+f) Na página home.page.html exiba um botão Capiturar que vai exibir a lista de alunos dentro de um campo img.
 
-<ion-button (click)=”capturar()”> 
+<ion-button (click)="capturar()"> 
    <ion-text>Capturar</ion-text>
 </ion-button>
-<img src=”{{imagemCapturada}}”/>
+<img src="{{ imagemCapturada}} "/>
 
-g) na classe HomePage injete o CameraSErvico
+g) Na classe HomePage injete o objeto CameraService no construtor.
 
-h) declare um atributo imagemCapturada
+h) Ainda na classe HomePage declare um atributo imagemCapturada e um método capturar().
 
-i) declare um método capturar que chama capturar.
+i) Faça o método capturar() atualizar o atributo imagemCapturada com a chamada ao método tirarFoto do serviço CameraService.
 
-j) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade09).
+j) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade10).
 
 k) Envie os arquivos versionados para o git remoto acionando a opção Push. Informe usuário/senha e acione a opção Sign in.
 
