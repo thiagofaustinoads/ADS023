@@ -1,0 +1,84 @@
+1. Criar um menu de opções no Android.
+
+a) Abra o aplicativo Android Studio.
+
+b) Escolha a opção "Start New Android Studio Project". Selecione a aba "Phone and Tablet" e o template "Add No Activity".
+
+c) Prossiga atribuindo o nome Atividade13 ao projeto e o br.iesb.ads023.atividade13 ao pacote.
+
+d) Verifique se a localização do projeto está indicando a pasta ADS023. Senão estiver, atualize para o caminho correto (C:\Users\matricula\Desktop\ADS023\Projetos\Atividade13). 
+
+e) Deixe a linguagem Kotlin como padrão do projeto e finalize o assistente.
+
+f) Ative o versionamento acionando o menu VCS->Enable Version Control Integration. Selecione o Git no sistema de controle de versão.
+
+g) Adicione uma Empty Activity. Salve com o nome MainActivity. 
+
+h) Faça a classe MainActivity herdar da classe AppCompatActivity().
+
+i) Crie um arquivo de recurso de menu na pasta res/menu com o nome de main_menu.xml. Ele deve conter as opções Faltas, Notas, Requerimentos.
+
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:id="@+id/faltas"
+        android:title="Faltas" />
+  <item android:id="@+id/notas"
+        android:title="Notas" />
+  <item android:id="@+id/requerimentos"
+        android:title="Requerimentos" />
+</menu>
+
+j) Implemente o método onCreateOptionsMenu() na classe MainActivity. Faça ele inflar o arquivo de recurso de menu através do método MenuInflater.inflate().
+
+public boolean onCreateOptionsMenu(Menu menu) {
+  MenuInflater inflater = getMenuInflater();
+  inflater.inflate(R.menu.main_menu, menu);
+  return true;
+}
+
+k) Execute o projecto através da opção 'Run app' e observe o resultado.
+
+l) Pare a execução do projeto através da opção 'Stop app'.
+
+
+
+2. Criar um menu de contexto no Android.
+
+a) Crie um arquivo de recurso de menu na pasta res/menu com o nome de context_menu.xml. Faça ele conter as opções Novo, Editar e Excluir.
+
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:id="@+id/novo"
+        android:title="Novo" />
+  <item android:id="@+id/editar"
+        android:title="Editar" />
+  <item android:id="@+id/excluir"
+        android:title="Excluir" />
+</menu>
+
+b) Implemente o método onCreateContextMenu() na classe MainActivity. Faça ele inflar o arquivo de recurso de menu através do método MenuInflater.inflate().
+
+public boolean onCreateContextMenu(ContextMenu menu, View v,
+   ContextMenuInfo menuInfo) {
+   super.onCreateContextMenu(menu, v, menuInfo);
+   MenuInflater inflater = getMenuInflater();
+   inflater.inflate(R.menu.context_menu, menu);
+}
+
+c) Execute o projecto através da opção 'Run app' e observe o resultado.
+
+d) Pare a execução do projeto através da opção 'Stop app'.
+
+
+
+3. Criar um menu popup no Android.
+
+k) Execute o projecto através da opção 'Run app' e observe o resultado.
+
+l) Pare a execução do projeto através da opção 'Stop app'.
+
+f) Adicione os arquivos no git local através do menu VCS->Git->Add.
+
+g) Faça o commit através do menu VCS->Commit. Marque todos os itens e acrescente ao comentário "Criando projeto Atividade13". Acione a opção Commit.
+
+h) Envie os arquivos versionados para o git remoto acionando o menu VCS->Git->Push.
