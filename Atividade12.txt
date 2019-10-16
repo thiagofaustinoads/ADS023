@@ -4,7 +4,7 @@ a) Abra o aplicativo Android Studio.
 
 b) Escolha a opção "Start New Android Studio Project". Selecione a aba "Phone and Tablet" e o template "Add No Activity".
 
-c) Prossiga atribuindo o nome Atividade11 ao projeto e o br.iesb.ads023.atividade11 ao pacote.
+c) Prossiga atribuindo o nome Atividade12 ao projeto e o br.iesb.ads023.atividade12 ao pacote.
 
 d) Verifique se a localização do projeto está indicando a pasta ADS023. Senão estiver, atualize para o caminho correto (C:\Users\matricula\Desktop\ADS023\Projetos\Atividade12). 
 
@@ -55,6 +55,8 @@ protected void onCreate(@Nullable Bundle savedInstanceState) {
    texto.setText(intencao.getStringExtra("msg"));
    ...
 }
+
+q) Execute novamente o projeto. Preencha o campo texto e pressione o botão. Qual foi o resultado? Pare a execução.
 
 
 
