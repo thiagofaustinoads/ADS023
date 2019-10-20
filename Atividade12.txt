@@ -12,91 +12,119 @@ e) Deixe a linguagem Kotlin como padrão do projeto e finalize o assistente.
 
 f) Ative o versionamento acionando o menu VCS->Enable Version Control Integration. Selecione o Git no sistema de controle de versão.
 
-g) Adicione uma Empty Activity. Salve com o nome MainActivity. No método onCreate() altere o título da activity para "Main".
+g) Adicione uma Empty Activity. Torne-a uma Launcher Activity e salve com o nome MainActivity. 
 
-h) Adicione outra Empty Activity. Salve com o nome ChildActivity. No método onCreate() altere o título da activity para "Child".
+h) No método onCreate() da classe MainActivity altere o título da activity para "Main".
 
-i) Aba o arquivo de layout activity_main no modo de Design.
+i) Adicione outra Empty Activity. Salve com o nome ChildActivity. 
 
-j) Adicione um botao ao layout. Atribua o texto "Enviar" ao botão.
+j) No método onCreate() da classe ChildActivity altere o título da activity para "Child".
 
-k) Dentro no método onCreate() da MainActiviy defina um ouvinte View.OnClickListener ao botão. Faça ele exibir ChildActivity.
+k) Aba o arquivo de layout activity_main no modo de Design.
 
-final Button botao = (Button) findViewById(R.id.button);
-botao.setOnClickListener(new View.OnClickListener() {
-  public void onClick(View v) {
-     Intent intencao = new Intent(MainActivity.this, ChildActivity.class);
-     startActivity(intencao);    
-  }
-});
+l) Adicione um botao ao layout. Atribua o texto "Enviar" ao botão.
 
-l) Execute o projeto e pressione o botão. Qual foi o resultado? Pare a execução.
+<Button
+    android:id="@+id/button"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+android:text="Enviar" />
 
-m) Adicione um EditText ao layout activity_main acima do botão.
+m) Dentro no método onCreate() da MainActiviy defina um ouvinte View.OnClickListener ao botão. Faça ele exibir ChildActivity.
 
-n) Acrescentar na intencao o parametro extra "msg" com o valor do EditText.
+val botao = findViewById<View>(R.id.button) as Button
+botao.setOnClickListener(object : View.OnClickListener() {
+    fun onClick(v: View) {
+        val intencao = Intent(this@MainActivity, ChildActivity::class.java)
+        startActivity(intencao)
+    }
+})
 
-final EditText texto = (EditText) findViewById(R.id.editText);
+n) Execute o projeto e pressione o botão. Qual foi o resultado? Pare a execução.
+
+o) Adicione um EditText ao layout activity_main acima do botão.
+
+<EditText
+    android:id="@+id/editText"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:inputType="text" />
+
+p) Acrescentar na intencao o parametro extra "msg" com o valor do EditText.
+
+val texto = findViewById<View>(R.id.editText) as EditText
 ...
-  public void onClick(View v) {
-     Intent intencao = new Intent(MainActivity.this, ChildActivity.class);
+  fun onClick(v: View) {
+     val intencao = Intent(this@MainActivity, ChildActivity::class.java)
      intencao.putExtra("msg", texto.getText().toString());
      ...
   }
 
-o) Acresente um TextView no layout activity_child.
+q) Acresente um TextView no layout activity_child.
 
-p) No método onCreate() da ChildActivity receba o parâmetro "msg" da intenção atribuindo ao TextView.
+<TextView
+    android:id="@+id/textView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text=""/>
 
-protected void onCreate(@Nullable Bundle savedInstanceState) {
+r) No método onCreate() da ChildActivity receba o parâmetro "msg" da intenção atribuindo ao TextView.
+
+override fun onCreate(savedInstanceState: Bundle?) {
    ...
-   Intent intencao = getIntent();
-   final TextView texto = (TextView) findViewById(R.id.textView);
-   texto.setText(intencao.getStringExtra("msg"));
+   val texto = findViewById<View>(R.id.textView) as TextView
+   texto.setText(intent.getStringExtra("msg"));
    ...
 }
 
-q) Execute novamente o projeto. Preencha o campo texto e pressione o botão. Qual foi o resultado? Pare a execução.
+s) Execute novamente o projeto. Preencha o campo texto e pressione o botão. Qual foi o resultado? Pare a execução.
 
 
 
 2. Criar uma intenção pendente. 
 
-a) Adicione um botao ao layout activiy_main. Atribua o texto "Notificar" ao botão.
+a) Adicione um botao ao layout activiy_child. Atribua o texto "Notificar" ao botão.
 
-b) Dentro no método onCreate() da MainActiviy defina um ouvinte View.OnClickListener ao botão. Faça ele criar uma intenção pendente para a ChildActivity.
+<Button
+    android:id="@+id/button"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Notificar" />
 
-final Button botao2 = (Button) findViewById(R.id.button2);
-botao2.setOnClickListener(new View.OnClickListener() {
-  public void onClick(View v) {
-     Intent intencao = new Intent(MainActivity.this, ChildActivity.class);
-     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-     PendingIntent pendente = PendingIntent.getActivity(MainActivity.this, 0, intencao, 0);
+b) Dentro no método onCreate() da ChildActiviy defina um ouvinte View.OnClickListener ao botão. Faça ele criar uma intenção pendente para a MainActivity.
+
+val botao = findViewById<View>(R.id.button) as Button
+botao.setOnClickListener(object : View.OnClickListener() {
+   fun onClick(v: View) {
+      val intencao = Intent(this@MainActivity, ChildActivity::class.java)
+      intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+      val pendente = PendingIntent.getActivity(this@MainActivity, 0, intencao, 0)          
   }
-});
+})
 
 c) Ainda no método onClick() crie uma notificação que deve conter a intenção pendente.
 
-String CHANNEL_ID = "meu_canal_id";
+val CHANNEL_ID = "meu_canal_id"
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-   CharSequence name = "meu_canal";
-   String description = "teste de notificacao";
-   int importance = NotificationManager.IMPORTANCE_DEFAULT;
-   NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
-   channel.setDescription(description);
-   NotificationManager notificationManager = getSystemService(NotificationManager.class);
-   notificationManager.createNotificationChannel(channel);
+    val name = "meu_canal"
+    val description = "teste de notificacao"
+    val importance = NotificationManager.IMPORTANCE_DEFAULT
+    val channel = NotificationChannel(CHANNEL_ID, name, importance)
+    channel.description = description
+    val notificationManager = getSystemService(NotificationManager::class.java)
+    notificationManager!!.createNotificationChannel(channel)
 }
 
-NotificationCompat.Builder builder = new NotificationCompat.Builder(MinhaActivity.this, CHANNEL_ID);
+val builder = NotificationCompat.Builder(this@MinhaActivity, CHANNEL_ID)
 builder.setSmallIcon(android.R.drawable.ic_dialog_info)
-       .setContentTitle("Minha notificacao")
-       .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-       .setContentIntent(pendente)
-       .setContentText("Chegou uma notificacao importante!");
+    .setContentTitle("Minha notificacao")
+    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+    .setContentIntent(pendente)
+    .setContentText("Chegou uma notificacao importante!")
 
-NotificationManagerCompat manager = NotificationManagerCompat.from(MinhaActivity.this);
-manager.notify(123, builder.build());
+val manager = NotificationManagerCompat.from(this@MinhaActivity)
+manager.notify(123, builder.build())
 
 d) Execute novamente o projeto. Clique no botão Notificar. Qual foi o resultado? 
 
