@@ -14,6 +14,32 @@ f) Ative o versionamento acionando o menu VCS->Enable Version Control Integratio
 
 g) Adicione uma Empty Activity. Torne-a uma Launcher Activity e salve com o nome LinearActivity. 
 
+h) Altere o arquivo activity_linear para usar um LinearLayout com orientação vertical ocupando todo o tamanho da tela (height e width match_parent).
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+</LinearLayout>
+
+i) Adicione um componente TextView ao layout.
+
+<TextView
+    android:id="@+id/textView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:textSize="40dp"/>
+
+j) Adicione outro LinearLayout ocupando a largura da tela 
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:gravity="center_horizontal" >
+</LinearLayout>
+
 j) Execute o projeto através da opção 'Run app' e observe o resultado.
 
 o) Pare a execução do projeto através da opção 'Stop app'.
