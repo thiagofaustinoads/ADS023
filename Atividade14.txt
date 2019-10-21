@@ -1,4 +1,4 @@
-1. Criar um menu de opções no Android.
+1. Trabalhar com LinearLayout no Android.
 
 a) Abra o aplicativo Android Studio.
 
@@ -12,11 +12,19 @@ e) Deixe a linguagem Kotlin como padrão do projeto e finalize o assistente.
 
 f) Ative o versionamento acionando o menu VCS->Enable Version Control Integration. Selecione o Git no sistema de controle de versão.
 
-g) Adicione uma Empty Activity. Torne-a uma Launcher Activity e salve com o nome MainActivity. 
+g) Adicione uma Empty Activity. Torne-a uma Launcher Activity e salve com o nome LinearActivity. 
 
 j) Execute o projeto através da opção 'Run app' e observe o resultado.
 
 o) Pare a execução do projeto através da opção 'Stop app'.
+
+
+
+2. Trabalhar com RelativeLayout no Android.
+
+
+
+3. Trabalhar com ConstraitLayout no Android.
 
 p) Adicione os arquivos no git local através do menu VCS->Git->Add.
 
