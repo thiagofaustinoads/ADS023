@@ -1,0 +1,25 @@
+1. Criar um menu de opções no Android.
+
+a) Abra o aplicativo Android Studio.
+
+b) Escolha a opção "Start New Android Studio Project". Selecione a aba "Phone and Tablet" e o template "Add No Activity".
+
+c) Prossiga atribuindo o nome Atividade15 ao projeto e o br.iesb.ads023.atividade15 ao pacote.
+
+d) Verifique se a localização do projeto está indicando a pasta ADS023. Senão estiver, atualize para o caminho correto (C:\Users\matricula\Desktop\ADS023\Projetos\Atividade15). 
+
+e) Deixe a linguagem Kotlin como padrão do projeto e finalize o assistente.
+
+f) Ative o versionamento acionando o menu VCS->Enable Version Control Integration. Selecione o Git no sistema de controle de versão.
+
+g) Adicione uma Empty Activity. Torne-a uma Launcher Activity e salve com o nome MainActivity. 
+
+j) Execute o projeto através da opção 'Run app' e observe o resultado.
+
+o) Pare a execução do projeto através da opção 'Stop app'.
+
+p) Adicione os arquivos no git local através do menu VCS->Git->Add.
+
+q) Faça o commit através do menu VCS->Commit. Marque todos os itens e acrescente ao comentário "Criando projeto Atividade15". Acione a opção Commit.
+
+r) Envie os arquivos versionados para o git remoto acionando o menu VCS->Git->Push.
