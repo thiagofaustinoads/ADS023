@@ -37,8 +37,10 @@ j) Adicione outro LinearLayout ocupando a largura da tela
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="20dp"
-    android:gravity="center_horizontal" >
+    android:gravity="center_horizontal">
 </LinearLayout>
+
+k) Adicione três botões 1, 2 e 3
 
 j) Execute o projeto através da opção 'Run app' e observe o resultado.
 
