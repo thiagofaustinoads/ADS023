@@ -16,11 +16,11 @@ g) Abra o arquivo activity_linear.xml no modo Design. Deixe visível apenas as j
 
 h) Na janela Component Tree mude o layout de Constraint para Linear (Dica: clique com o botão direito sobre ConstraintLayout, selecione Convert view... e depois LinearLayout).
 
-i) Na janela Attributes mude as propriedades layout_width e layout_height para match_parent, a propriedade orientation para vertical e a propriedade id para linearLayout.
+i) Na janela Attributes mude as propriedades layout_width e layout_height para match_parent, a propriedade orientation para vertical.
 
-j) Adicione um componente TextView ao linearLayout (Dica: clique em Common na janela Palette, selecione TextView e arraste para o linearLayout). Mude a propriedade textSize para 50sp e a propriedade layout_marginBottom para 8dp.
+j) Adicione um componente TextView ao LinearLayout (Dica: clique em Common na janela Palette, selecione TextView e arraste para o linearLayout). Mude a propriedade textSize para 50sp e a propriedade layout_marginBottom para 8dp. Apague o valor da propriedade text.
 
-k) Adicione um LinearLayout (vertical) ao linearLayout (Dica: clique em Layouts na janela Palette, selecione LinearLayout (vertical) arraste para o linearLayout). Mude as propriedades layout_width e layout_height para match_parent.
+k) Adicione um LinearLayout (vertical) ao LinearLayout (Dica: clique em Layouts na janela Palette, selecione LinearLayout (vertical) arraste para o linearLayout). Mude as propriedades layout_width e layout_height para match_parent.
 
 l) Adicione cinco LinearLayout (horizontal) ao LinearLayout (vertical). Mude a propriedade layout_height para wrap_content de todos eles. Mude a propriedade laytou_margimTop para 8dp apenas no último LinearLayout (horizontal).
 
@@ -42,6 +42,13 @@ p) Pare a execução do projeto através da opção 'Stop app'.
 2. Trabalhar com ConstraitLayout no Android.
 
 a) Adicione uma Empty Activity. Torne-a uma Launcher Activity e salve com o nome ConstraintActivity. 
+
+b) Abra o arquivo activity_constraint.xml no modo Design. Deixe visível apenas as janelas Palette, Component Tree e Atributtes do Android Studio. Selecione no botão Design Surface as telas de Design + Blueprints.
+
+c) Adicione um componente TextView ao ContraintLayout. Mude a propriedade textSize para 50sp. Ligue o componente com o topo, a esquerda e a direita do layoute. Atribua o valor 8 margem em cada ligação. Mude o tipo de ligação da esquerda e da direita de Wrap Content para Match Constraint (Dica: clique em >> até mudar para |-w-|) Apague o valor da propriedade text. 
+
+d)
+
 
 p) Adicione os arquivos no git local através do menu VCS->Git->Add.
 
