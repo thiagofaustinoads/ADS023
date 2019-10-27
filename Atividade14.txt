@@ -1,69 +1,37 @@
 1. Trabalhar com LinearLayout no Android.
 
-a) Abra o aplicativo Android Studio.
+a) Abra o aplicativo Android Studio. 
 
 b) Escolha a opção "Start New Android Studio Project". Selecione a aba "Phone and Tablet" e o template "Add No Activity".
 
-c) Prossiga atribuindo o nome Atividade14 ao projeto e o br.iesb.ads023.atividade14 ao pacote.
+c) Prossiga atribuindo o nome Atividade14 ao projeto e o br.iesb.ads023.atividade14 ao pacote. Verifique se a localização do projeto está indicando a pasta ADS023. Senão estiver, atualize para o caminho correto (C:\Users\matricula\Desktop\ADS023\Projetos\Atividade14). 
 
-d) Verifique se a localização do projeto está indicando a pasta ADS023. Senão estiver, atualize para o caminho correto (C:\Users\matricula\Desktop\ADS023\Projetos\Atividade14). 
+d) Deixe a linguagem Kotlin como padrão do projeto e finalize o assistente.
 
-e) Deixe a linguagem Kotlin como padrão do projeto e finalize o assistente.
+e) Ative o versionamento acionando o menu VCS->Enable Version Control Integration. Selecione o Git no sistema de controle de versão.
 
-f) Ative o versionamento acionando o menu VCS->Enable Version Control Integration. Selecione o Git no sistema de controle de versão.
+f) Adicione uma Empty Activity. Torne-a uma Launcher Activity e salve com o nome LinearActivity. 
 
-g) Adicione uma Empty Activity. Torne-a uma Launcher Activity e salve com o nome LinearActivity. 
+g) Abra o arquivo activity_linear.xml no modo Design. Deixe visível apenas as janelas Palette, Component Tree e Atributtes do Android Studio. Selecione no botão Design Surface as telas de Design + Blueprints.
 
-h) Altere o arquivo activity_linear, utilizando o modo Text, para usar um LinearLayout com orientação vertical ocupando todo o tamanho da tela (height e width match_parent).
+h) Na janela Component Tree mude o layout de Constraint para Linear (Dica: clique com o botão direito sobre ConstraintLayout, selecione Convert view... e depois LinearLayout).
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    android:orientation="vertical">
-</LinearLayout>
+i) Na janela Attributes mude as propriedades layout_width e layout_height para match_parent, a propriedade orientation para vertical e a propriedade id para linearLayout.
 
-i) Adicione um componente TextView ao layout ocupando a largura da tela.
+j) Adicione um componente TextView ao linearLayout (Dica: clique em Common na janela Palette, selecione TextView e arraste para o linearLayout). Mude a propriedade textSize para 50sp e a propriedade layout_marginBottom para 8dp.
 
-<TextView
-    android:id="@+id/textView"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:textSize="40dp"/>
+k) Adicione um LinearLayout (vertical) ao linearLayout (Dica: clique em Layouts na janela Palette, selecione LinearLayout (vertical) arraste para o linearLayout). Mude as propriedades layout_width e layout_height para match_parent.
 
-j) Adicione quatro LinearLayout ao layout principal, todos com orientação horizontal e ocupando a largura da tela.
+l) Adicione cinco LinearLayout (horizontal) ao LinearLayout (vertical). Mude a propriedade layout_height para wrap_content de todos eles. Mude a propriedade laytou_margimTop para 8dp apenas no último LinearLayout (horizontal).
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-</LinearLayout>
+m) Adicione três Button em cada LinearLayout (vertical) de modo a criar um discador do telefone. Mude a propriedade layout_width para 80dp, a propriedade layout_height para 70dp e a propriedade textSize para 40sp. Mude a propriedade id para buttonX e a propriedade text para X, onde X é o dígito.
 
-k) Adicione três componentes Button em cada layout de modo a criar um teclado discador do telefone.
+1 2 3
+4 5 6
+7 8 9
+* 0 #
 
-<Button
-   android:id="@+id/button?"
-   android:layout_width="80dp"
-   android:layout_height="70dp"
-   android:text="?"
-   android:textSize="40dp"/>
-
-l) Adicione mais um LinearLayout ao layout principal ocupando a largura da tela.
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-</LinearLayout>
-
-m) Adicione dois componentes Button ao layout adicionado para representar as ações DISCAR e APAGAR.
-
-<Button
-    android:id="@+id/buttonD"
-    android:layout_width="wrap_content"
-    android:layout_height="70dp"
-    android:text="Discar"
-    android:textSize="40dp"/>
-    
-n) Adicione em cada layout dos botões a propriedade android:gravity="center_horizontal".
+n) Adicione dois Button no último LinearLayout (horizontal) para serem as opções Discar e Encerrar. Mude as propriedades layout_width e layout_height para wrap_content, e a propriedade textSize para 24sp de ambos.
 
 o) Execute o projeto através da opção 'Run app' e observe o resultado.
 
