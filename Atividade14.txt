@@ -24,7 +24,7 @@ k) Adicione um LinearLayout (vertical) ao LinearLayout (Dica: clique em Layouts 
 
 l) Adicione cinco LinearLayout (horizontal) ao LinearLayout (vertical). Mude a propriedade layout_height para wrap_content de todos eles. Mude a propriedade laytou_margimTop para 8dp apenas no último LinearLayout (horizontal).
 
-m) Adicione três Button em cada LinearLayout (vertical) de modo a criar um discador do telefone. Mude a propriedade layout_width para 80dp, a propriedade layout_height para 70dp e a propriedade textSize para 40sp. Mude a propriedade a propriedade text para X, onde X é um dos dígitos do telefone.
+m) Adicione três Button em cada LinearLayout (horizontal) de modo a criar um discador do telefone. Mude a propriedade layout_width para 80dp, a propriedade layout_height para 70dp e a propriedade textSize para 40sp. Mude a propriedade a propriedade text para X, onde X é um dos dígitos do telefone.
 
 1 2 3
 4 5 6
