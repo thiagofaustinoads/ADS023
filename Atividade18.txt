@@ -1,0 +1,134 @@
+1. Salvar dados com SharePreferences.
+
+a) Abra o aplicativo Android Studio.
+
+b) Escolha a opção "Start New Android Studio Project". Selecione a aba "Phone and Tablet" e o template "Add No Activity".
+
+c) Prossiga atribuindo o nome Atividade15 ao projeto e o ads023.iesb.br ao domínio.
+
+d) Verifique se a localização do projeto está indicando a pasta ADS023. Senão estiver, atualize para o caminho correto (C:\Users\matricula\Desktop\ADS023\Projetos\Atividade15). 
+
+e) Deixe a linguagem Java como padrão do projeto e escolha a API mínima 28 que corresponde ao Android 9 (Pie). Finalize o assistente.
+
+f) Ative o versionamento acionando o menu VCS->Enable Version Control Integration. Selecione o Git no sistema de controle de versão.
+
+g) Adicione uma Empty Activity através no menu File->New->Activity. Salve com o nome PreferenciasActivity. Não esqueça de torná-la lancável (LAUNCHER).
+
+h) Abra o layout activity_preferencias.xml e troque o viewgroup para LinearLayout com orientação vertical. Em seguida acrescente algumas views do tipo Switch.
+
+    <Switch
+        android:id="@+id/switch1"
+        android:text="Configuração 1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+i) No método onCreate() da classe PreferenciasActitivy defina o título Preferências para a activity. Em seguida leia o valor de cada configuração armazenada na memória interna e atribua ao respectivo view.
+
+        setTitle("Preferencias");
+
+        SharedPreferences dados = getSharedPreferences("MinhasPref", Context.MODE_PRIVATE);
+        Switch item1 = findViewById(R.id.switch1);
+        item1.setChecked(dados.getBoolean("switch1", false));
+
+j) No método onPause() da classe PreferenciasActivity grave o valor de cda preferência na memória interna.
+
+        SharedPreferences dados = getSharedPreferences("MinhasPref", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = dados.edit();
+        Switch item = findViewById(R.id.switch1);
+        editor.putBoolean("switch1", item.isChecked());
+        editor.apply();
+
+k) Execute o projeto através da opção 'Run app' e atribua valores para cada preferência.
+
+l) Pare a execução do projeto através da opção 'Stop app' e execute novamente. As preferências foram salvas?
+
+m) Adicione os arquivos no git local através do menu VCS->Git->Add.
+
+n) Faça o commit através do menu VCS->Commit. Marque todos os itens e acrescente ao comentário "Criando projeto Atividade15". Acione a opção Commit.
+
+
+
+2. Salvar dados com Room.
+
+a) Abra o projeto Atividade10.
+
+b) Inclua no arquivo build.gradle do módulo app a dependência ao pacote android.arch.persistence.room. Em seguida, acione o menu Build->Make Project.
+
+dependencies {
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
+    testImplementation 'android.arch.persistence.room:testing:1.1.1'
+
+}
+
+c) Crie uma classe Requerimento que implmenta a interface Serializable dentro do pacote br.iesb.ads023.atividade10.entity. Acrescente a anotação @Entity a classe.
+
+d) Defina os atributos públicos id, prova, disciplina, requerimento. Acrescente a anotação @PrimaryKey(autoGenerate = true) ao id e @ColumnInfo(name="") aos demais atributos. Defina também o método toString() que deve retornar o atributo requerimento.
+
+    @PrimaryKey(autoGenerate = true)
+    public long id;
+    @ColumnInfo(name="prova")
+    public int prova;
+    @ColumnInfo(name="disciplina")
+    public int disciplina;
+    @ColumnInfo(name="requerimento")
+    public String requerimento;
+    
+    @Override
+    public String toString() {
+        return "Requerimento " + id + " - " + requerimento;
+    }
+
+e) Crie uma interface RequerimentoDao dentro do pacote br.iesb.ads023.atividade10.dao. Acrescente a anotação @Dao a interface.
+
+f) Declare o método listar() do tipo List<Requerimento>. Acrescente a notação @Query ao método que deve executar a consulta SELECT * FROM requerimentos.
+
+g) Declare o método inserir() do tipo void recebendo um parâmetro requerimento do tipo Requerimento. Acrescente a anotação @Insert ao método.
+
+h) Declare o método alterar() do tipo void recebendo um parâmetro requerimento do tipo Requerimento. Acrescente a anotação @Update ao método.
+
+i) Declare o método excluir() do tipo void recebendo um parâmetro requerimento do tipo Requerimento. Acrescente a anotação @Delete ao método.
+
+j) Crie uma classe abstrata AlunoOnlineBD e que estenda de RoomDatabase dentro do pacote br.iesb.ads023.atividade.db. Declare o método abstrato getRequerimentoDao() do tipo RequerimentoDao.
+
+k) Acrescente a anotação @Database a classe contendo a entidade Requerimento.
+
+@Database(entities = {Requerimento.class}, version = 1, exportSchema = false)
+
+l) Crie uma classe ConexaoBD. Defina um atributo privato e estático instancia do tipo AlunoOnlineBD.
+
+m) Decare o método estático getInstancia() do tipo AlunoOnlineBD que recebe um parâmetro contexto do tipo Context. Se o atributo instância for null crie uma instância chamado o método dataBaseBuilder da classe Room. 
+
+if (instancia == null) {
+    instancia = Room.databaseBuilder(contexto, AlunoOnlineBD.class, "alunoonline").allowMainThreadQueries().build();
+}
+
+return instancia;
+
+m) No método onResume() da classe ListaRequerimentoActivity faça o ListView carregar os requerimentos do banco de dados chamando o método ConexaoBD.getConexaoBD(getApplicationContext()).getRequerimentoDao.listar(). Crie um ArrayAdapter<Requerimento> e atribua ao ListView.
+
+ListView listView = findViewById(R.id.listview);
+List<Requerimento> requerimentos = ConexaoBD.getInstancia(getApplicationContext()).getRequerimentoDao().listar();
+ArrayAdapter<Requerimento> adapter = new ArrayAdapter<Requerimento>(this, android.R.layout.simple_list_item1, requerimentos);
+listView.setAdapter(adapter);
+
+n) No método onClick() do ouvinte OnClickListener definido na classe NovoRequerimentoActivity crie uma instância de Requerimento atribuindo os valores de cada campo ao respectivo atributo. 
+
+o) Chame o método ConexaoBD.getInstancia(getApplicationContext()).getRequerimentoDao().inserir() passando o objeto requerimento.
+
+   Spinner prova = findViewById(R.id.spinner1);
+   Spinner disciplina = findViewById(R.id.spinner2);
+   EditText texto = findViewById(R.id.editText);
+
+   Requerimento requerimento = new Requerimento();
+   requerimento.prova = prova.getSelectedItemPosition();
+   requerimento.disciplina = disciplina.getSelectedItemPosition();
+   requerimento.requerimento = texto.getText().toString();
+
+p) Execute o projeto através da opção 'Run app' e insira novos requerimentos.
+
+q) Pare a execução do projeto através da opção 'Stop app' e execute novamente. Os requerimentos foram salvos?
+
+r) Adicione os arquivos no git local através do menu VCS->Git->Add.
+
+s) Faça o commit através do menu VCS->Commit. Marque todos os itens e acrescente ao comentário "Salvando no SQLite". Acione a opção Commit.
