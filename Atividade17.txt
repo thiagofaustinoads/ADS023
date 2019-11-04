@@ -1,57 +1,59 @@
-2. Criar um formulário com os componentes visuais do Ionic.
+1. Criar um formulário no Android Studio.
 
-a) Crie uma página chamada contato.
+a) Abra o aplicativo Android Studio.
 
-b) Faça a página contato ser exibida através da rota raiz.
+b) Escolha a opção "Start New Android Studio Project". Selecione a aba "Phone and Tablet" e o template "Add No Activity".
 
-c) Atribua o título Novo contrato para pagina contato.
+c) Prossiga atribuindo o nome Atividade16 ao projeto e o br.iesb.ads023.atividade17 ao pacote.
 
-d) Adicione no contéudo da página um rótulo e um input para o nome do contato (Dica: utilize os componentes ion-item, ion-label e ion-input).
+d) Verifique se a localização do projeto está indicando a pasta ADS023. Senão estiver, atualize para o caminho correto (C:\Users\matricula\Desktop\ADS023\Projetos\Atividade17). 
 
-e) Adicione no contéudo da página um rótulo e um input para o email do contato.
+e) Deixe a linguagem Kotlin como padrão do projeto e finalize o assistente.
 
-f) Adicione no conteúdo da página um rótulo e um radio (Masculino ou Feminino) para o sexo do contato (Dica: utilize os componentes ion-item, ion-label, ion-radio e ion-radion-group).
+f) Ative o versionamento acionando o menu VCS->Enable Version Control Integration. Selecione o Git no sistema de controle de versão.
 
-g) Adicione no conteúdo da página um rótulo e dois selects sendo um para listar os dias e outro os meses para a data de aniversário (Dica: utilize os componentes ion-item, ion-label, ion-select e ion-select-option).
+g) Adicione uma Empty Activiy através no menu File->New->Activity. Salve com o nome ContatoActivity.
 
-h) Adicione no contéudo da página um rótulo e um input para o telefone do contato.
+h) Atribua o título Novo contato para ContatoActivity.
 
-i) Adicione no conteúdo da página um rótulo e um checkbox para indicar que é um contato favorito (Dica: utilize os componentes ion-item, ion-label, ion-checkbox). Inicialmente, deixe o checkbox marcado.
+i) Adicione no layout da activity um rótulo (TextView) e um input (PlainText) para o nome do contato (Dica: utilize o recurso de string para cadatrar o texto do rótulo).
 
-j) Adicione no conteúdo da página um botão Salvar (Dica: utilize o componente ion-button).
+j) Adicione no layout da activity um rótulo e um input para o email do contato.
 
-k) Adicione na classe ContatoPage o método salvar().
+k) Adicione no layout da activity um rótulo e um radio (Masculino ou Feminino) para o sexo do contato (Dica: utilize o recurso de string para cadastrar os itens do rádio).
 
-l) Faça o método salvar() emitir um alert com a mensagem Contato salvo!.
+l) Adicione no layout da activity um rótulo e um datepicker para data de nascimento.
 
-m) Faça o botão Salvar acionar método salvar() da classe ContatoPage através do event binding click.
+m) Adicione no layout da activity um rótulo e um input para o telefone do contato.
+
+n) Adicione no layout da activity um botão Salvar.
+
+o) Adicione um método salvar() na classe ContatoActivity. Faça o método salvar() emitir um alert com a mensagem "Contato salvo!".
+
+p) Adicione um ouvinte onClickListener ao botão. Faça o ouvinte chamar o método salvar().
+
+r) Execute o projeto, preecha o formulário e pressione o botão. Qual foi o resultado? Pare a execução.
 
 
-Usar recursos de string.
 
+2. Validar um fomulário no Android Studio.
 
-4. Validando um fomulário reativo no Ionic
+a) Adicione um método validar() do tipo boolean na classe ContatoActivity. Declare uma variável ok do tipo boolean inicializando com true.
 
-a) Atribua o validador padrão required aos campos Nome, Email e Telefone.
+b) Faça o método validar() checar se os campos Nome, Email e Telefone foram preenchidos. Se não for faça exibir a mensagem de erro Campo é obrigatório e atribua falso a variável ok (Dica: declare a mensagem no recurso de string e atribua a propriedade error do campo Nome). 
 
-b) Atribua a property bind [disable]="!formulario.valid()" ao botão Salvar.
+c) Faça o método validar() checar se o campo Nome tenha no mínimo no mínimo 5 caracteres. Se não tiver faça exibir a mensagem de erro Campo deve conter pelo menos 5 caracteres e atribua falso a variável ok.
 
-c) Atribua o validador padrão minLenght ao campo nome para que tenha no mínimo 5 caracteres.
+d) Faça o método validar() chegar se o campo Email tem o formato '^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$' (Dica: utilize a classe Pattern para validar o campo). Se não tiver faça exibir a mensagem de erro Formato inválido! e atribua falso a variável ok.
 
-d) Atribua o validador padrão pattern com a string '^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$' para validar o formato do email.
+e) Faça o método validar() retornar a variável ok (Dica: return@validar ok).
 
-e) Declare na classe ContatoPage um atributo mensagens_validacao inicializando um objeto JS.
+f) Chame o método validar() no método salvar(). Se o método validar() for verdadeiro exibir o alerta do método salvar().
 
-mensagens_validacao = {}
+g) Execute o projeto, preecha o formulário com erros de validação e pressione o botão. Qual foi o resultado? Pare a execução.
 
-f) Adicione no atributo mensagens_validacao uma propriedade que represente a mensagem de validação de um dado campo (Dica: combine o nome do campo com o nome do validador)
+h) Adicione os arquivos no git local através do menu VCS->Git->Add.
 
-nome_required: 'Nome é obrigatório',
-nome_minlenght: 'Nome deve conter no mínimo 5 caracteres',
-...
+i) Faça o commit através do menu VCS->Commit. Marque todos os itens e acrescente ao comentário "Criando projeto Atividade17". Acione a opção Commit.
 
-g) Adicione após cada ion-item da página Contato um ion-note para exibir a mensagem de validação se houver um erro no formulário.
-
-<ion-note padding color="danger" *ngIf="fomulario.get('nome').hasError('required') && (formulario.get('nome').dirty || fomulario.get('nome').touched)">
-   <ion-icon name="information-circle-outline"></ion-icon>{{ mensagens_validacao.nome_required }}
-</ion-note>
+j) Envie os arquivos versionados para o git remoto acionando o menu VCS->Git->Push.
