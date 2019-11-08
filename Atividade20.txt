@@ -4,25 +4,25 @@ a) Abra o aplicativo Android Studio.
 
 b) Escolha a opção "Start New Android Studio Project". Selecione a aba "Phone and Tablet" e o template "Empty Activity".
 
-c) Prossiga atribuindo o nome Atividade16 ao projeto e o ads023.iesb.br ao pacote.
+c) Prossiga atribuindo o nome Atividade20 ao projeto e o br.iesb.ads023.atividade20 ao pacote.
 
-d) Verifique se a localização do projeto está indicando a pasta ADS023. Senão estiver, atualize para o caminho correto (C:\Users\matricula\Desktop\ADS023\Projetos\Atividade16). 
+d) Verifique se a localização do projeto está indicando a pasta ADS023. Senão estiver, atualize para o caminho correto (C:\Users\matricula\Desktop\ADS023\Projetos\Atividade20). 
 
-e) Deixe a linguagem Java como padrão do projeto. Defina o nome MainActivity para a activity e torne-a lançável. Finalize o assistente.
+e) Deixe a linguagem Kotlin como padrão do projeto e finalize o assistente.
 
 f) Ative o versionamento acionando o menu VCS->Enable Version Control Integration. Selecione o Git no sistema de controle de versão.
 
-g) Edite o leiaute activity_main.xml trocando o ConstriantLayout para LinearLayout com a orientação na horizontal.
+g) Adicione uma Empty Activity através no menu File->New->Activity. Salve com o nome MainActivity. Não esqueça de torná-la lancável (LAUNCHER).
 
 h) Adicione na view um botão Iniciar Serviço, um botão Parar Serviço, um botão Vincular Serviço e outro Desvincular Serviço.
 
-j) Na classe MainActivity declare os métodos iniciarServico(), pararServico(), vincularServico() e desvincularServico(), ambos do tipo void.
+i) Na classe MainActivity declare os métodos iniciarServico(), pararServico(), vincularServico() e desvincularServico(), ambos do tipo void.
 
-k) Crie um ouvinte onClickListenter para cada botão. 
+j) Crie um ouvinte onClickListenter para cada botão. 
 
-l) Faça o primeiro botão chamar o método iniciarServico() e o segundo botão chamar o método pararServico().
+k) Faça o primeiro botão chamar o método iniciarServico() e o segundo botão chamar o método pararServico().
 
-m) Faça o terceiro botão chamar o método vincularServico() e o quarto botão chamar o método desvincularServico().
+l) Faça o terceiro botão chamar o método vincularServico() e o quarto botão chamar o método desvincularServico().
 
 
 
