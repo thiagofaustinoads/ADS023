@@ -4,7 +4,7 @@ a) Abra o aplicativo Android Studio.
 
 b) Escolha a opção "Start New Android Studio Project". Selecione a aba "Phone and Tablet" e o template "Add No Activity".
 
-c) Prossiga atribuindo o nome Atividade16 ao projeto e o br.iesb.ads023.atividade17 ao pacote.
+c) Prossiga atribuindo o nome Atividade17 ao projeto e o br.iesb.ads023.atividade17 ao pacote.
 
 d) Verifique se a localização do projeto está indicando a pasta ADS023. Senão estiver, atualize para o caminho correto (C:\Users\matricula\Desktop\ADS023\Projetos\Atividade17). 
 
