@@ -1,4 +1,4 @@
-1. Salvar dados com SharePreferences.
+1. Criar um cadastro no Android Studio.
 
 a) Abra o aplicativo Android Studio.
 
@@ -12,34 +12,21 @@ e) Deixe a linguagem Kotlin como padrão do projeto e finalize o assistente.
 
 f) Ative o versionamento acionando o menu VCS->Enable Version Control Integration. Selecione o Git no sistema de controle de versão.
 
-g) Adicione uma Empty Activity através no menu File->New->Activity. Salve com o nome PreferenciasActivity. Não esqueça de torná-la lancável (LAUNCHER).
+g) Adicione uma Empty Activity através no menu File->New->Activity. Salve com o nome ListaActivity. Não esqueça de torná-la lancável (LAUNCHER).
 
-h) Abra o layout activity_preferencias.xml e troque o viewgroup para LinearLayout com orientação vertical. Em seguida acrescente algumas views do tipo Switch.
+h) Abra o layout activity_lista.xml e acrescente um ListView e FloatActionButton. 
 
-    <Switch
-        android:id="@+id/switch1"
-        android:text="Configuração 1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+i) Adicione uma Empty Activity através no menu File->New->Activity. Salve com o nome NovoActivity.
 
-i) No método onCreate() da classe PreferenciasActitivy defina o título Preferências para a activity. Em seguida leia o valor de cada configuração armazenada na memória interna e atribua ao respectivo view.
+j) Abra o layout activity_novo.xml e acrescente TextView, EditText e Button para criar os campos Nome e Telefone, e a opção Salvar.
 
-        title = "Preferencias"
-        val dados = getSharedPreferences("MinhasPref", Context.MODE_PRIVATE)
-        val item1 = findViewById(R.id.switch1)
-        item1.setChecked(dados.getBoolean("switch1", false))
+k) No método onCreate() da classe NovoActivity altere o título para Novo Contato e crie um ouvinte para o botão Salvar. Faça o ouvinte encerrar a activity.
 
-j) No método onPause() da classe PreferenciasActivity grave o valor de cda preferência na memória interna.
+l) No método onCreate() da classe ListaActivity altere o título para Contatos e crie um ouvinte para o botão FAB. Faça o ouvinte iniciar a NovoActivity.
 
-        val dados = getSharedPreferences("MinhasPref", Context.MODE_PRIVATE)
-        val editor = dados.edit()
-        val item = findViewById(R.id.switch1)
-        editor.putBoolean("switch1", item.isChecked())
-        editor.apply()
+m) Execute o projeto através da opção 'Run app' e acione os botões.
 
-k) Execute o projeto através da opção 'Run app' e atribua valores para cada preferência.
-
-l) Pare a execução do projeto através da opção 'Stop app' e execute novamente. As preferências foram salvas?
+n) Pare a execução do projeto através da opção 'Stop app'.
 
 
 
@@ -53,15 +40,15 @@ dependencies {
     testImplementation 'android.arch.persistence.room:testing:1.1.1'
 }
 
-b) Crie uma classe Requerimento que implmenta a interface Serializable dentro do pacote br.iesb.ads023.atividade19.entity. Acrescente a anotação @Entity a classe.
+b) Crie uma classe Contato. Acrescente a anotação @Entity a classe.
 
-c) Defina os atributos públicos id, prova, disciplina, requerimento. Acrescente a anotação @PrimaryKey(autoGenerate = true) ao id e @ColumnInfo(name="") aos demais atributos. Defina também o método toString() que deve retornar o atributo requerimento.
+c) Defina os atributos id, nome e telefone. Acrescente a anotação @PrimaryKey(autoGenerate = true) ao id e @ColumnInfo(name="") aos demais atributos. Defina também o método toString() que deve retornar o atributo nome.
 
     @PrimaryKey(autoGenerate = true)
-    var id: Long = 0
-    @ColumnInfo(name = "prova")
-    var prova: Int = 0
-    @ColumnInfo(name = "disciplina")
+    val id: Int = 0
+    @ColumnInfo(name = "nome")
+    val nome: String? = null
+    @ColumnInfo(name = "telefone")
     var disciplina: Int = 0
     @ColumnInfo(name = "requerimento")
     var requerimento: String? = null
@@ -70,7 +57,7 @@ c) Defina os atributos públicos id, prova, disciplina, requerimento. Acrescente
         return "Requerimento $id - $requerimento"
     }
 
-d) Crie uma interface RequerimentoDao dentro do pacote br.iesb.ads023.atividade19.dao. Acrescente a anotação @Dao a interface.
+d) Crie uma interface ContatoDao. Acrescente a anotação @Dao a interface.
 
 e) Declare o método listar() do tipo List<Requerimento>. Acrescente a notação @Query ao método que deve executar a consulta SELECT * FROM requerimentos.
 
