@@ -14,46 +14,69 @@ f) Ative o versionamento acionando o menu VCS->Enable Version Control Integratio
 
 g) Adicione uma Empty Activiy através no menu File->New->Activity. Salve com o nome RecyclerActivity.
 
-h) Atribua o título Recycler para RecyclerActivity.
+h) Adicione no layout da activity um RecyclerView (Dica: No modo Design do Android Studio, clique na seta para baixo ao lado do componente RecyclerView para importar as dependencias). Atribua à propriedade id o valor recycler. 
 
-i) Adicione no layout da activity um RecyclerView.
+i) No método onCreate() da classe RecyclerActivity altere o título da activity para "Recycler".
 
-j) Adicione no layout da activity um rótulo e um input para o email do contato.
+j) Ainda no método onCreate() declare uma variável lista do tipo List<String> inicializando com os valores "Asa Sul", "Asa Norte", "Sudoeste", "Noroeste", "Lago Sul", "Lago Norte", "Aguas Claras", "Candangolandia", "Nucleo Bandeirantes", "Vicentes Pires", "Taguatinga", "Ceilandia" e "Samambaia".
 
-k) Adicione no layout da activity um rótulo e um radio (Masculino ou Feminino) para o sexo do contato (Dica: utilize o recurso de string para cadastrar os itens do rádio).
+val lista: List<String> = listOf<String>("Asa Sul", "Asa Norte", "Sudoeste", "Noroeste", "Lago Sul", "Lago Norte", "Aguas Claras", "Candangolandia", "Nucleo Bandeirantes", "Vicentes Pires", "Taguatinga", "Ceilandia", "Samambaia")
 
-l) Adicione no layout da activity um rótulo e um datepicker para data de nascimento.
+k) Também declareuma variável recyclerView localizando o componente RecyclerView do layout.
 
-m) Adicione no layout da activity um rótulo e um input para o telefone do contato.
+val recyclerView = findViewById(R.id.recyclerView) as RecyclerView.
 
-n) Adicione no layout da activity um botão Salvar.
+l) Adicione um Layout através do menu File->New->Androi Resource File. Escolhe o tipo Layout e salve com o nome recycler_item.
 
-o) Adicione um método salvar() na classe ContatoActivity. Faça o método salvar() emitir um alert com a mensagem "Contato salvo!".
+m) Adicione no layout recycler_item um TextView. Mude a propriedade textSize para 24sp.
 
-p) Adicione um ouvinte onClickListener ao botão. Faça o ouvinte chamar o método salvar().
-
-r) Execute o projeto, preecha o formulário e pressione o botão. Qual foi o resultado? Pare a execução.
+n) Execute o projeto. Qual foi o resultado? Pare a execução.
 
 
 
 2. Criar um Adapter no Android Studio.
 
-a) Adicione um método validar() do tipo boolean na classe ContatoActivity. Declare uma variável ok do tipo boolean inicializando com true.
+a) Adicione uma classe Kotlin através do menu File->New->Kotlin File/Class. Salve com o nome RecyclerAdapter.
 
-b) Faça o método validar() checar se os campos Nome, Email e Telefone foram preenchidos. Se não for faça exibir a mensagem de erro Campo é obrigatório e atribua falso a variável ok (Dica: declare a mensagem no recurso de string e atribua a propriedade error do campo Nome). 
+b) Dentro da classe RecyclerAdapter declare uma classe interna ViewHolder que herda de RecyclerView.ViewHolder.
 
-c) Faça o método validar() checar se o campo Nome tenha no mínimo no mínimo 5 caracteres. Se não tiver faça exibir a mensagem de erro Campo deve conter pelo menos 5 caracteres e atribua falso a variável ok.
+class ViewHolder: RecyclerView.ViewHolder()
 
-d) Faça o método validar() chegar se o campo Email tem o formato '^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$' (Dica: utilize a classe Pattern para validar o campo). Se não tiver faça exibir a mensagem de erro Formato inválido! e atribua falso a variável ok.
+c) Faça o construtor da classe ViewHolder receber um parametro View.
 
-e) Faça o método validar() retornar a variável ok (Dica: return@validar ok).
+class ViewHolder(view: View): RecyclerView.ViewHolder(view)
 
-f) Chame o método validar() no método salvar(). Se o método validar() for verdadeiro exibir o alerta do método salvar().
+d) Faça a classe RecyclerAdapter herdar da classe RecyclerView.Adapter passando como genérico a classe RecyclerAdapter.ViewHolder.
 
-g) Execute o projeto, preecha o formulário com erros de validação e pressione o botão. Qual foi o resultado? Pare a execução.
+class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() 
 
-h) Adicione os arquivos no git local através do menu VCS->Git->Add.
+e) Implemente os métodos herdados da classe RecyclerView.Adapter (Dica: pressione CTRL+I e marque todos os métodos).
 
-i) Faça o commit através do menu VCS->Commit. Marque todos os itens e acrescente ao comentário "Criando projeto Atividade17". Acione a opção Commit.
+f) Acrescente ao construtor da classe RecyclerAdapter um atributo privado itens do tipo List<String> e um atributo privado contexto do tipo Context.
 
-j) Envie os arquivos versionados para o git remoto acionando o menu VCS->Git->Push.
+class RecyclerAdapter(private val itens: List<String, private val contexto: Context):
+
+g) Faça o método getItemCount() retornar o tamanho do atributo itens.
+
+return itens.size
+
+h) Faça o método onCreateViewHolder() inflar o layout recycler_item retornando uma instância de ViewHolder.
+
+val view = LayoutInflater.from(contexto).inflate(R.layout.recycler_item, parent, false)
+return ViewHolder(view)
+
+i) Declare uma variável texto dentro da classe RecyclerAdapter.ViewHolder inicializando com o valor de textView do layout recycler_item.
+
+val texto = view.textView
+
+j) Faça o método onBindViewHolder atualizar a variável texto com o valor de itens em uma determinada posição do RecyclerView.
+
+holder.texto.text = itens[position]
+
+k) Execute o projeto. Qual foi o resultado? Pare a execução.
+
+l) Adicione os arquivos no git local através do menu VCS->Git->Add.
+
+m) Faça o commit através do menu VCS->Commit. Marque todos os itens e acrescente ao comentário "Criando projeto Atividade18". Acione a opção Commit.
+
+n) Envie os arquivos versionados para o git remoto acionando o menu VCS->Git->Push.
