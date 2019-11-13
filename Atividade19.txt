@@ -52,11 +52,10 @@ data class Contato(
     val nome: String? = null
     @ColumnInfo(name = "telefone")
     val telefone: String? = null
-
-    override fun toString(): String {
-        return "$id - $nome - $telefone"
-    }
-)
+) {
+  override fun toString(): String {
+    return "$id - $nome - $telefone"
+}
 
 d) Crie uma interface ContatoDao. Acrescente a anotação @Dao a interface.
 
@@ -101,7 +100,7 @@ companion object {
 
 l) Dentro do objeto singleton declare o método getInstancia() do tipo ContatoBD que recebe um parâmetro contexto do tipo Context. Se o atributo instância for null crie uma instância chamado o método dataBaseBuilder da classe Room. 
 
-fun getInstancia(contexto: Context): ContatoBD {
+fun getInstancia(contexto: Context): ContatoBD? {
    if (instancia == null) {
      instancia = Room.databaseBuilder(contexto, ConexaoBD::class.java, "contato.db").allowMainThreadQueries().build()
    } 
@@ -114,7 +113,7 @@ m) No método onResume() da classe ListaActivity crie uma variavel bd inicializa
     val contatos = bd?.contatoDao()?.listar()
     val listView = findViewById(R.id.listview)
     val adapter = ArrayAdapter<Contato>(this, android.R.layout.simple_list_item1, (contato as List<Contato).toTypedArray())
-    listView.setAdapter(adapter)
+    listView.adapter = adapter
 
 n) No ouvinte OnClickListener definido na classe NovoActivity crie uma instância de Contato atribuindo os valores de cada campo ao respectivo atributo. 
 
