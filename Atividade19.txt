@@ -34,6 +34,8 @@ n) Pare a execução do projeto através da opção 'Stop app'.
 
 a) Inclua no arquivo build.gradle do módulo app a dependência ao pacote android.arch.persistence.room. Em seguida, acione o menu Build->Make Project.
 
+apply plugin: 'kotlin-kapt'
+
 dependencies {
     implementation 'android.arch.persistence.room:runtime:1.1.1'
     annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
