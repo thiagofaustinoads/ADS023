@@ -20,7 +20,7 @@ i) Adicione uma Empty Activity através no menu File->New->Activity. Salve com o
 
 j) Abra o layout activity_novo.xml e acrescente TextView, EditText e Button para criar os campos Nome e Telefone, e a opção Salvar.
 
-k) No método onCreate() da classe NovoActivity altere o título para Novo Contato e crie um ouvinte para o botão Salvar. Faça o ouvinte encerrar a activity.
+k) No método onCreate() da classe NovoActivity altere o título para Novo Contato e crie um ouvinte para o botão Salvar. Faça o ouvinte encerrar a activity (Dica: chamar o método finish()).
 
 l) No método onCreate() da classe ListaActivity altere o título para Contatos e crie um ouvinte para o botão FAB. Faça o ouvinte iniciar a NovoActivity.
 
@@ -44,68 +44,91 @@ b) Crie uma classe Contato. Acrescente a anotação @Entity a classe.
 
 c) Defina os atributos id, nome e telefone. Acrescente a anotação @PrimaryKey(autoGenerate = true) ao id e @ColumnInfo(name="") aos demais atributos. Defina também o método toString() que deve retornar o atributo nome.
 
+@Entity
+data class Contato(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0
     @ColumnInfo(name = "nome")
     val nome: String? = null
     @ColumnInfo(name = "telefone")
-    var disciplina: Int = 0
-    @ColumnInfo(name = "requerimento")
-    var requerimento: String? = null
+    val telefone: String? = null
 
     override fun toString(): String {
-        return "Requerimento $id - $requerimento"
+        return "$id - $nome - $telefone"
     }
+)
 
 d) Crie uma interface ContatoDao. Acrescente a anotação @Dao a interface.
 
-e) Declare o método listar() do tipo List<Requerimento>. Acrescente a notação @Query ao método que deve executar a consulta SELECT * FROM requerimentos.
+@Dao
+interface ContatoDao {}
 
-f) Declare o método inserir() do tipo void recebendo um parâmetro requerimento do tipo Requerimento. Acrescente a anotação @Insert ao método.
+e) Declare o método listar() do tipo List<Contato>. Acrescente a notação @Query ao método que deve executar a consulta SELECT * FROM contato.
 
-g) Declare o método alterar() do tipo void recebendo um parâmetro requerimento do tipo Requerimento. Acrescente a anotação @Update ao método.
+@Query("SELECT * FROM contato")
+fun listar(): List<Contato>
 
-h) Declare o método excluir() do tipo void recebendo um parâmetro requerimento do tipo Requerimento. Acrescente a anotação @Delete ao método.
+f) Declare o método inserir() do tipo void recebendo um parâmetro contato do tipo Contato. Acrescente a anotação @Insert ao método.
 
-i) Crie uma classe abstrata AlunoOnlineBD e que estenda de RoomDatabase dentro do pacote br.iesb.ads023.atividade19.db. Declare o método abstrato getRequerimentoDao() do tipo RequerimentoDao.
+@Insert
+fun inserir(Contato contato)
 
-j) Acrescente a anotação @Database a classe contendo a entidade Requerimento.
+g) Declare o método alterar() do tipo void recebendo um parâmetro contato do tipo Contato. Acrescente a anotação @Update ao método.
 
-@Database(entities = {Requerimento.class}, version = 1, exportSchema = false)
+@Update
+fun inserir(Contato contato)
 
-k) Crie uma classe ConexaoBD. Defina um atributo privato e estático instancia do tipo AlunoOnlineBD.
+h) Declare o método excluir() do tipo void recebendo um parâmetro contato do tipo Contato. Acrescente a anotação @Delete ao método.
 
-l) Declare o método estático getInstancia() do tipo AlunoOnlineBD que recebe um parâmetro contexto do tipo Context. Se o atributo instância for null crie uma instância chamado o método dataBaseBuilder da classe Room. 
+@Delete
+fun excluir(Contato contato)
 
-if (instancia == null) {
-            instancia = Room.databaseBuilder(contexto, AlunoOnlineBD::class.java, "alunoonline")
-                .allowMainThreadQueries().build()
+i) Crie uma classe abstrata ContatoBD e que estenda de RoomDatabase. Declare o método abstrato contatoDao() do tipo ContatoDao.
+
+public abstract class ContatoBD : RoomDatabase() {
+   abstract fun contatoDao(): ContatoDao
 }
-return instancia;
 
-m) No método onResume() da classe ListaRequerimentoActivity faça o ListView carregar os requerimentos do banco de dados chamando o método ConexaoBD.getConexaoBD(getApplicationContext()).getRequerimentoDao.listar(). Crie um ArrayAdapter<Requerimento> e atribua ao ListView.
+j) Acrescente a anotação @Database a classe contendo a entidade Contato.
 
+@Database(entities = arrayOf(Contato::class), version = 1, exportSchema = false)
+
+k) Crie um objeto singleton na classe ContatoBD. Defina um atributo privato instancia do tipo ContatoBD.
+
+companion object {
+        private var instancia: ContatoBD? = null
+}
+
+l) Dentro do objeto singleton declare o método getInstancia() do tipo ContatoBD que recebe um parâmetro contexto do tipo Context. Se o atributo instância for null crie uma instância chamado o método dataBaseBuilder da classe Room. 
+
+fun getInstancia(contexto: Context): ContatoBD {
+   if (instancia == null) {
+     instancia = Room.databaseBuilder(contexto, ConexaoBD::class.java, "contato.db").allowMainThreadQueries().build()
+   } 
+   return instancia
+}
+
+m) No método onResume() da classe ListaActivity crie uma variavel bd inicializando com getInstancia(). Faça o ListView carregar os contatos do banco de dados chamando o método listar() do contatoDao. Crie um ArrayAdapter<Contato> e atribua ao ListView.
+    
+    val bd = ContatoBD.getInstancia(this)
+    val contatos = bd?.contatoDao()?.listar()
     val listView = findViewById(R.id.listview)
-    val requerimentos = ConexaoBD.getInstancia(applicationContext).getRequerimentoDao().listar()
-    val adapter = ArrayAdapter<Requerimento>(this, android.R.layout.simple_list_item1, requerimentos)
+    val adapter = ArrayAdapter<Contato>(this, android.R.layout.simple_list_item1, (contato as List<Contato).toTypedArray())
     listView.setAdapter(adapter)
 
-n) No método onClick() do ouvinte OnClickListener definido na classe NovoRequerimentoActivity crie uma instância de Requerimento atribuindo os valores de cada campo ao respectivo atributo. 
+n) No ouvinte OnClickListener definido na classe NovoActivity crie uma instância de Contato atribuindo os valores de cada campo ao respectivo atributo. 
 
-o) Chame o método ConexaoBD.getInstancia(getApplicationContext()).getRequerimentoDao().inserir() passando o objeto requerimento.
+o) Chame o método inserir() de contatoDao passando o objeto contato.
 
-    val prova = findViewById(R.id.spinner1)
-    val disciplina = findViewById(R.id.spinner2)
-    val texto = findViewById(R.id.editText)
+    val nome = findViewById(R.id.editText)
+    val telefone = findViewById(R.id.editText2)    
+    val contato = Contato(0, nome.text.toString(), telefone.text.toString())
+    val bd = ContatoBD.getInstancia(this)
+    bd?.contatoDao()?.inserir(contato)    
 
-    val requerimento = Requerimento()
-    requerimento.prova = prova.getSelectedItemPosition()
-    requerimento.disciplina = disciplina.getSelectedItemPosition()
-    requerimento.requerimento = texto.getText().toString()
+p) Execute o projeto através da opção 'Run app' e insira novos contatos.
 
-p) Execute o projeto através da opção 'Run app' e insira novos requerimentos.
-
-q) Pare a execução do projeto através da opção 'Stop app' e execute novamente. Os requerimentos foram salvos?
+q) Pare a execução do projeto através da opção 'Stop app' e execute novamente. Os contatos foram salvos?
 
 r) Adicione os arquivos no git local através do menu VCS->Git->Add.
 
