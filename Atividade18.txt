@@ -24,7 +24,7 @@ val lista: List<String> = listOf<String>("Asa Sul", "Asa Norte", "Sudoeste", "No
 
 k) Também declareuma variável recyclerView localizando o componente RecyclerView do layout.
 
-val recyclerView = findViewById(R.id.recyclerView) as RecyclerView.
+val recyclerView = findViewById(R.id.recyclerView) as RecyclerView
 
 l) Adicione um Layout através do menu File->New->Android Resource File. Escolhe o tipo Layout e salve com o nome recycler_item.
 
@@ -83,10 +83,26 @@ i) Faça o método onBindViewHolder atualizar a variável holder.view.textView c
 
 holder.view.textView.text = itens[position]
 
-j) Execute o projeto. Qual foi o resultado? Pare a execução.
+j) No método onCreate() da classe RecyclerActivity, declare uma constante viewAdapter inicializando com RecyclerAdapter passando como parâemtros a lista e o contexto.
 
-k) Adicione os arquivos no git local através do menu VCS->Git->Add.
+val viewAdapter = RecyclerAdapter(lista, this)
 
-l) Faça o commit através do menu VCS->Commit. Marque todos os itens e acrescente ao comentário "Criando projeto Atividade18". Acione a opção Commit.
+k) No método onCreate() da classe RecyclerActivity, declare uma constante viewManager inicializando com LinearLayoutManager.
 
-m) Envie os arquivos versionados para o git remoto acionando o menu VCS->Git->Push.
+val viewManager = LinearLayoutManager(this)
+
+l) No método onCreate() dda classe RecyclerActivity, chame o método apply da variável recyclerView fazendo ele realizar as chamadas setHasFixedSize(true) e atualizar as variáveis layoutManager e adapter com os valores das constantes viewManager e viewAdapter.
+
+recyclerView.apply { 
+   setHasFixedSize(true)
+   layoutManager = viewManager
+   adapter = viewAdapter
+}
+
+m) Execute o projeto. Qual foi o resultado? Pare a execução.
+
+n) Adicione os arquivos no git local através do menu VCS->Git->Add.
+
+o) Faça o commit através do menu VCS->Commit. Marque todos os itens e acrescente ao comentário "Criando projeto Atividade18". Acione a opção Commit.
+
+p) Envie os arquivos versionados para o git remoto acionando o menu VCS->Git->Push.
