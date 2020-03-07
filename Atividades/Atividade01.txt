@@ -115,13 +115,7 @@ f) Dentro da divisão crie uma lista não ordenada com as classes navbar-nav mr-
 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 </ul>
 
-g) Adicione na lista o link Requerimento com as classes nav-link e active.
-
-<li class="nav-item">
-   <a class="nav-link active" href="lista-requerimentos.html">Requerimentos</a>
-</li>
-
-h) Crie mais uma lista não ordenada com as classes nav navbar-nav navbar-right. Adicione o link Sair com as classes nav-link e active.
+g) Crie mais uma lista não ordenada com as classes nav navbar-nav navbar-right. Adicione o link Sair com as classes nav-link e active.
 
 <ul class="nav navbar-nav navbar-right">
   <li class="nav-item">
@@ -129,29 +123,29 @@ h) Crie mais uma lista não ordenada com as classes nav navbar-nav navbar-right.
   </li>
 </ul>
 
-i) Adicione ao corpo da página uma divisão com as classes container p-2 p-md-4.
+h) Adicione ao corpo da página uma divisão com as classes container p-2 p-md-4.
 
 <div class="container p-2 p-md-4">
 </div>
 
-j) Adicione à divisão container uma divisão com a classe card.
+i) Adicione à divisão container uma divisão com a classe card.
 
 <div class="card">
 </div>
 
-k) Adicione à divisão card uma divisão com as classes card-header e outra com a classe card-body.
+j) Adicione à divisão card uma divisão com as classes card-header e outra com a classe card-body.
 
 <div class="card-header">
 </div>
 <div class="card-body">
 </div>
 
-l) Dentro da divisão card-header adicione o texto "Seus requerimentos" aplicando a classe font-weight-bold e um link Novo aplicando as classes btn btn-danger btn-sm float-right ligando a página novo-requerimento.html.
+k) Dentro da divisão card-header adicione o texto "Seus requerimentos" aplicando a classe font-weight-bold e um link Novo aplicando as classes btn btn-danger btn-sm float-right ligando a página novo-requerimento.html.
 
 <span class="font-weight-bold">Seus requerimentos</span>
 <a href="novo-requerimento.html" class="btn btn-danger btn-sm float-right">Novo</a>
 
-m) Dentro da divisão card-body adicione cinco divisões com a classe row. Atribua as classes font-weight-bold bg-light border-bottom para a primeira divisão, as classes pt-2 pb-2 para a segunda divisão, as classes font-weight-bold bg-light border-bottom para a terceira divisão, as classes border-bottom pt-2 pb-2 para a quarta divisão e as classes pt-2 pb-2 para a quinta divisão.
+l) Dentro da divisão card-body adicione cinco divisões com a classe row. Atribua as classes font-weight-bold bg-light border-bottom para a primeira divisão, as classes pt-2 pb-2 para a segunda divisão, as classes font-weight-bold bg-light border-bottom para a terceira divisão, as classes border-bottom pt-2 pb-2 para a quarta divisão e as classes pt-2 pb-2 para a quinta divisão.
 
 <div class="row font-weight-bold bg-light border-bottom"></div>
 <div class="row pt-2 pb-2"></div>
@@ -159,39 +153,39 @@ m) Dentro da divisão card-body adicione cinco divisões com a classe row. Atrib
 <div class="row border-bottom pt-2 pb-2"></div>
 <div class="row pt-2 pb-2"></div>
 
-n) Dentro da primeira divisão row adicione uma divisão Curso com a classe col-md-5 e uma divisão Período com a classe col-md-2.
+m) Dentro da primeira divisão row adicione uma divisão Curso com a classe col-md-5 e uma divisão Período com a classe col-md-2.
 
 <div class="col-md-5">Curso</div>
 <div class="col-md-2">Período</div>
  
-o) Dentro da segunda divisão row adicione uma divisão Análise e Desenvolvimento de Sistemas com a classe col-md-5 e uma divisão 20191 com a classe col-md-2.
+n) Dentro da segunda divisão row adicione uma divisão Análise e Desenvolvimento de Sistemas com a classe col-md-5 e uma divisão 20191 com a classe col-md-2.
 
 <div class="col-md-5">Análise e Desenvolvimento de Sistemas</div>
 <div class="col-md-2">20191</div>
 
-p) Dentro da terceira divisão row adicione uma divisão Disciplina com a classe col-md-5 e duas divisões Revisão e Situação, ambas com a classe col-md-3.
+o) Dentro da terceira divisão row adicione uma divisão Disciplina com a classe col-md-5 e duas divisões Revisão e Situação, ambas com a classe col-md-3.
 
 <div class="col-md-5">Disciplina</div>
 <div class="col-md-2">Revisão</div>
 <div class="col-md-2">Situação</div>
 
-q) Dentro da quarta divisão row adicione uma divisão com a classe col-md-5 e duas divisões com a classe col-md-2 para exibir o requerimento da disciplina ADS023 - Programação para Dispositivos Móveis.
+p) Dentro da quarta divisão row adicione uma divisão com a classe col-md-5 e duas divisões com a classe col-md-2 para exibir o requerimento da disciplina ADS023 - Programação para Dispositivos Móveis.
 
 <div class="col-md-5">ADS023 - Programação para Dispositivos Móveis</div>
 <div class="col-md-2">A1</div>
 <div class="col-md-2"><span class="badge badge-success">Deferido</span></div>
 
-r) Dentro da quinta divisão row adicione uma divisão com a classe col-md-5 e duas divisões com a classe col-md-2 para exibir o requerimento da disciplina RCT024 - Gerência de Projetos.
+q) Dentro da quinta divisão row adicione uma divisão com a classe col-md-5 e duas divisões com a classe col-md-2 para exibir o requerimento da disciplina RCT024 - Gerência de Projetos.
 
 <div class="col-md-5">RCT024 - Gerência de Projetos</div>
 <div class="col-md-2">A2</div>
 <div class="col-md-2"><span class="badge badge-danger">Indeferido</span></div>
 
-s) Adicione ao corpo da página o rodapé da pagina index.html.
+r) Adicione ao corpo da página o rodapé da pagina index.html.
 
-t) Importe os scripts JS do Bootstrap antes da tag </body>.
+s) Importe os scripts JS do Bootstrap antes da tag </body>.
 
-u) Abra o arquivo lista-requerimentos.hml no navegador Chrome. Visualize a página em diversos tamanhos.
+t) Abra o arquivo lista-requerimentos.hml no navegador Chrome. Visualize a página em diversos tamanhos.
 
 
 
@@ -207,26 +201,31 @@ d) Importe a folha de estilo do Bootstrap antes da tag </head>.
 
 e) Crie uma barra de navegação dentro do corpo da página contendo a logo branca do IESB com um spam contendo o nome da aplicação, o botão de menu principal e uma divisão para os itens de menu.
 
-f) Dentro da divisão crie uma lista não ordenada com as classes navbar-nav mr-auto mt-2 mt-lg-0. Adicione o link Requerimentos com as classes nav-link e active.
+f) Dentro da divisão crie uma lista não ordenada com as classes navbar-nav mr-auto mt-2 mt-lg-0.
 
 g) Crie mais uma lista não ordenada com as classes nav navbar-nav navbar-right. Adicione o link Sair com as classes nav-link e active.
 
-h) Adicione ao corpo da página uma divisão com as classes container p-2 p-md-12.
+h) Adicione ao corpo da página uma divisão com as classes container p-2 p-md-4.
 
-<div class="container p-2 p-md-12"></div>
+i) Adicione à divisão container uma divisão com a classe card.
 
-i) Crie um formulário dentro da divisão container. Atribua as classes m-auto p-2 w-100 e a propriedade action="lista-requerimentos.html" para a tag <form>.
+j) Adicione à divisão card uma divisão com as classes card-header e outra com a classe card-body.
+
+k) Dentro da divisão card-header adicione o texto "Novo requerimento" aplicando a classe font-weight-bold.
+
+<span class="font-weight-bold">Novo requerimento</span>
+
+l) Crie um formulário dentro da divisão card-body. Atribua as classes m-auto p-2 w-100 e a propriedade action="lista-requerimentos.html" para a tag <form>.
 
 <form classes="m-auto p-2 w-100" action="lista-requerimentos.html"></form>
 
-j) Dentro do formulário crie três divisões. Atribua a classe form-group a todas elas.
+m) Dentro do formulário crie três divisões. Atribua a classe form-group a todas elas.
 
-<p class="h5">Novo requerimento</p>
 <div class="form-group"></div>
 <div class="form-group"></div>
 <div class="form-group"></div>
 
-k) Dentro da primeira divisão adicione um rótulo e um campo de seleção para a disciplina.
+n) Dentro da primeira divisão adicione um rótulo e um campo de seleção para a disciplina.
 
 <label for="inputDiscipina">Disciplina</label>
 <select class="form-control" id="inputDisciplina">
@@ -235,7 +234,7 @@ k) Dentro da primeira divisão adicione um rótulo e um campo de seleção para 
    <option value="RCT024">RCT024 - Gerência de Projetos</option>
 </select>
 
-l) Dentro da segunda divisão adicione um rótulo e um campo de seleção para a prova.
+o) Dentro da segunda divisão adicione um rótulo e um campo de seleção para a prova.
 
 <label for="inputProva">Prova</label>
 <select class="form-control" id="inputProva">
@@ -245,24 +244,24 @@ l) Dentro da segunda divisão adicione um rótulo e um campo de seleção para a
    <option value="A3">A3</option>
 </select>
  
-m) Dentro da terceira divisão adicione um rótulo e um campo de texto para a argumentação.
+p) Dentro da terceira divisão adicione um rótulo e um campo de texto para a argumentação.
 
 <label for="inputArgumentacao">Argumentação</label>
 <textarea class="form-control" id="inputArgumentacao" required></textarea>
 
-n) Adicione ao formulário um botão submit e um link Desistir.
+q) Adicione ao formulário um botão submit e um link Desistir.
 
 <button class="btn btn-danger" type="submit">Salvar</button>
 <a class="btn btn-light" href="lista-requerimentos.html">Desistir</a>
 
-o) Adicione ao corpo da página o rodapé da pagina index.html.
+r) Adicione ao corpo da página o rodapé da pagina index.html.
 
-p) Importe os scripts JS do Bootstrap antes da tag </body>.
+s) Importe os scripts JS do Bootstrap antes da tag </body>.
 
-q) Abra o arquivo novo-requerimento.hml no navegador Chrome. Visualize a página em diversos tamanhos.
+t) Abra o arquivo novo-requerimento.hml no navegador Chrome. Visualize a página em diversos tamanhos.
 
-r) Pressione as teclas Ctrl+Shift+G para acessar o painel do Git. Em seguida, clique em Stage All.
+u) Pressione as teclas Ctrl+Shift+G para acessar o painel do Git. Em seguida, clique em Stage All.
 
-s) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade01).
+v) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade01).
 
-t) Envie os arquivos versionados para o git remoto acionando a opção Push. Informe usuário/senha e acione a opção Sign in.
+w) Envie os arquivos versionados para o git remoto acionando a opção Push. Informe usuário/senha e acione a opção Sign in.
