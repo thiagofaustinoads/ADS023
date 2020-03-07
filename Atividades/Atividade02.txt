@@ -162,7 +162,8 @@ n) Dentro do primeiro ion-item crie um elemento ion-label e um elemento ion-sele
 <ion-label position="floating">Disciplina</ion-label>
 <ion-select size-lg placeholder="Selecione uma">
   <ion-select-option value="ADS023">ADS023 - Programação para Dispositivos Móveis></ion-select-option>
-  <ion-select-option value="RCT024">RCT024 - Gerência de Projetos</ion-select-option></ion-select>
+  <ion-select-option value="RCT024">RCT024 - Gerência de Projetos</ion-select-option>
+</ion-select>
   
 o) Dentro do segundo ion-item crie um elemento ion-label e um elemento ion-select para o campo Avaliação.
 
