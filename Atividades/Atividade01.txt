@@ -1,4 +1,4 @@
-﻿1. Configurar o VSCode para acessar o GitHub.
+1. Configurar o VSCode para acessar o GitHub.
 
 a) Abra o aplicativo VSCode.
 
@@ -231,7 +231,7 @@ k) Dentro da primeira divisão adicione um rótulo e um campo de seleção para 
 <label for="inputDiscipina">Disciplina</label>
 <select class="form-control" id="inputDisciplina">
    <option value="">Selecione uma disciplina</option>
-   <option value="ADS023">ADS023 - Programação para Dispositivos Móveis></option>
+   <option value="ADS023">ADS023 - Programação para Dispositivos Móveis</option>
    <option value="RCT024">RCT024 - Gerência de Projetos</option>
 </select>
 
