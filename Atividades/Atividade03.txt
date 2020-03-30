@@ -28,119 +28,21 @@ e) Interrompa a execução do servidor pressionando CTRL+C.
 
 3. Trabalhar os elementos screen, props, state e style do projeto React Native.
 
-a) Pelo VSCode crie uma pasta screens.
+a) No arquivo App.js apague o retorno da função App deixando vazio.
 
-d) Acesse a URL localhost:8100/notas. Qual foi o resultado?
+b) Apague o conteúdo do método Stylesheet.create().
 
-e) Altere o conteúdo do arquivo notas.page.html para exibir uma lista de notas.
+c) Execute o projeto no navegador pelo Metro Blunder. Qual foi o resultado?
 
-<ion-content>
-  <p>Suas notas</p>
-  <ion-grid>
-    <ion-row>
-      <ion-col>Disciplina</ion-col>
-      <ion-col>A1</ion-col>
-      <ion-col>A2</ion-col>
-      <ion-col>A3</ion-col>
-      <ion-col>EDAD</ion-col>
-      <ion-col>Média</ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-content>
+d) Faça a função App retornar <View></View>. Recarregue a página do app no navegador e observe o resultado.
 
-f) Acrescente um elemento ion-row para exibir as notas da disciplina ADS023 - Programação para Dispositivos Móveis.
+e) Atribua o estilo { backgroundColor: 'red' } a tag View (Dica: <View style={{ backgroundColor: 'red'}}>).
 
-<ion-row>
-  <ion-col>ADS023 - Programação para Dispositivos Móveis</ion-col>
-  <ion-col>5,0</ion-col>
-  <ion-col>-</ion-col>
-  <ion-col>5,0</ion-col>
-  <ion-col>0,0</ion-col>
-  <ion-col>5,0</ion-col>
-</ion-row>
+f) Altere o estilo backgroundColor para backgroud-color. Recarregue a página do app no navegador e observe o resultado.
 
-g) Acrescente um elemento ion-row para exibir as notas da disciplina RCT024 - Gerência de Projetos.
+g) Apa
 
-<ion-row>
-<ion-col>RCT024 - Gerência de Projetos</ion-col>
-<ion-col>4,0</ion-col>
-<ion-col>6,0</ion-col>
-<ion-col>-</ion-col>
-<ion-col>10,0</ion-col>
-<ion-col>5,0</ion-col>
-</ion-row>
-
-h) Altere o arquivo notas.page.ts acrescentando a propriedade titulo do tipo string dentro da classe NotasPage.
-
-titulo: string = 'Suas notas'
-
-i) Substitua o texto Suas notas para exibir o conteúdo do atributo titulo (Dica: usar a interpolação {{ }}).
-
-<p>{{ titulo }}</p>
-
-j) Crie uma interface com o comando generate. Defina o nome notas/nota.model para a interface.
-
-k) Altere o arquivo nota.model.ts acrescentando as propriedades disciplina, a1, a2, a3, edad e media do tipo string. Altere no nome da inferface para Nota.
-
-export interface Nota {
-
-    disciplina: string;
-    a1: string;
-    a2: string;
-    a3: string;
-    edad: string;
-    media: string;
-
-} 
-
-l) Acrescente na classe NotasPage a propriedade notas do tipo Nota[]. Inicialize o array com as notas das disciplinas.
-
-notas: Nota[] = [
-  {
-    disciplina: 'ADS023 - Programação para Dispositivos Móveis',
-    a1: '5,0',
-    a2: '-',
-    a3: '5,0',
-    edad: '0,0',
-    media: '5,0'
-  },
-
-  {
-    disciplina: 'RCT024 - Gerência de Projetos',
-    a1: '4,0',
-    a2: '6,0',
-    a3: '-',
-    edad: '10,0',
-    media: '5,0'
-  },
-];
-
-m) Substitua no arquivo notas.page.html a listagem de notas pela diretiva *ngFor.
-
-<ion-row *ngFor="let nota of notas">
-  <ion-col>{{ nota.disciplina }} </ion-col>
-  <ion-col>{{ nota.a1 }} </ion-col>
-  <ion-col>{{ nota.a2 }} </ion-col>
-  <ion-col>{{ nota.a3 }} </ion-col>
-  <ion-col>{{ nota.edad }} </ion-col>
-  <ion-col>{{ nota.media }} </ion-col>
-</ion-row>
-
-n) Crie um servido com o comando generate. Defina o nome notas/notas para o serviço.
-
-o) Mova a propriedade notas da classe NotasPage para a classe NotasService no arquivo notas.service.ts. Torne essa propriedade privada.
-
-p) Defina o método getNotas() na classe NotasService. Faça esse método retornar uma cópia da propriedade notas.
-
-getNotas() {
-  return [...this.notas];
-}
-
-q) Acrescente no construtor da classe NotasPage um parâmetro privado notasService do tipo NotasService.
-
-r) Acrescente a propriedade notas do tipo Nota[]. Faça o método ngOnInit() inicializar essa propriedade como resultado do método getNotas() de notasService.
-
-this.notas = this.notasSevice.getNotas();
+f) Interrompa a execução do servidor pressionando CTRL+C.
 
 
 
@@ -164,7 +66,7 @@ h) Recarregue o aplicativo no dispositivo virtual pressionando as teclas CTRL+R.
 
 i) No dispositivo virtual pressione as teclas CTRL+M e pare o modo debug.
 
-j) Interrompa a execução do Metro Blunder.
+j) Interrompa a execução do servidor pressionando CTRL+C.
 
 k) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade03).
 
