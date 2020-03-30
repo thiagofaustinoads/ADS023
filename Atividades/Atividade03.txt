@@ -10,7 +10,7 @@ d) Crie um novo projeto React Native chamado Atividade03 usando o template em br
 
 
 
-2. Executando um projeto usando Expo CLI
+2. Executando um projeto usando Expo CLI.
 
 a) Acesse o diretório do projeto criado (Dica: digite cd nome-do-projeto no terminal).
 
@@ -26,7 +26,7 @@ e) Interrompa a execução do servidor pressionando CTRL+C.
 
 
 
-3. Adicionar componentes ao projeto. (Criar uma screen e um stylesheet).
+3. Trabalhar os elementos screen, props, state e style do projeto React Native.
 
 a) Pelo VSCode crie uma pasta screens.
 
@@ -142,34 +142,30 @@ r) Acrescente a propriedade notas do tipo Nota[]. Faça o método ngOnInit() ini
 
 this.notas = this.notasSevice.getNotas();
 
-s) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade03).
-
-t) Envie os arquivos versionados para o git remoto acionando a opção Push. Informe usuário/senha e acione a opção Sign in.
-
 
 
 4. Executando um projeto na plataforma Android.
 
-a) Adicione a plataforma android com o comando capacitor (Dica: ioni capacitor add). Qual foi o resultado?
+a) Abra o Android Studio no menu Configure->AVDManager para configurar um dispostivo virtual.
 
-b) Gere um pacote de distribuição do projeto Ionic para ser implantado em um servidor Web (Dica: ionic build).
+b) Carregue um dispositivo virtual através da opção Play.
 
-c) Tente adicionar a plataforma android novamente. Qual foi o resutlado?
+c) No terminal do VSCode execute o Metro Blunder.
 
-d) Abra o aplicativo Android Studio.
+d) No Metro Blunder escolha a opção Run a device Android emulator. Qual foi o resultado?
 
-e) Escolha a opção Open Project. Selecione a pasta android gerada pelo capacitor.
+e) No dispositivo virtual pressione as teclas CTRL+M.
 
-f) Verifique se o Gradle executou o build do projeto. Caso contrário, acione o menu Build->Make Project.
+f) Escolha a opção Debugging JS para ativar o modo debug. Qual foi o resultado?
 
-g) Ative o modo de depuração USB na Opções do desenvolvedor do aparelho. Essa opção fica oculta por padrão e para ser exibida deve-se tocar 7x no Número de compilação nas Configurações->Sobre->Informações do Software.
+g) Acrescente na função App() do componente App.js a chamada console.log("Chamou a função App()!");.
 
-h) Conecte um dispositivo a sua estação de trabalho via USB. Aceite a permissão solicitada pelo dispositivo.
+h) Recarregue o aplicativo no dispositivo virtual pressionando as teclas CTRL+R. Apareceu alguma mensagem na janela de debugging?
 
-i) Inicie a execução do projeto. Verifique se o seu dispositivo apareceu na janela Select Deployment Target.
+i) No dispositivo virtual pressione as teclas CTRL+M e pare o modo debug.
 
-j) Selecione o disposito e clique em Ok. 
+j) Interrompa a execução do Metro Blunder.
 
-k) Aceite a instalação do Android SDK corresponte ao dispositivo. O app foi instalado no dispositivo?
+k) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade03).
 
-l) Interrompa a execução do projeto e remova o app do dispositivo.
+l) Envie os arquivos versionados para o git remoto acionando a opção Push. Informe usuário/senha e acione a opção Sign in.
