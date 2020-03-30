@@ -1,36 +1,34 @@
-1. Criar um projeto usando Ionic CLI.
+1. Criar um projeto usando Expo CLI.
 
 a) Abra o aplicativo VSCode.
 
-b) Instale os plugins Auto Import, Ionic 4 Snippets e Angular Snippets (Version 8).
+b) Instale os plugins React Native Tools e ES7 React/Redux/GraphQL/React-Native Snippets.
 
 c) Selecione a pasta ADS023 e abra o terminal pressionando CTRL+'.
 
-d) Crie um novo projeto Ionic chamado Atividade03 usando o template em branco (Dica: ionic start Atividade03 blank). Responda N quando for questionado a participação do projeto nas estatísticas do Angular Team.
+d) Crie um novo projeto React Native chamado Atividade03 usando o template em branco (Dica: expo init Atividade03).
 
 
 
-2. Executando um projeto usando Ionic CLI
+2. Executando um projeto usando Expo CLI
 
 a) Acesse o diretório do projeto criado (Dica: digite cd nome-do-projeto no terminal).
 
-b) Execute o projeto com o comando serve. Foi exibida a página no navegador? 
+b) Execute o Metro Blunder com o comando expo start. Foi exibida a página no navegador? 
+
+c) Pelo Metro Blunder, rode o projeto Atividade03 pelo web browser. 
 
 c) Interrompa a execução do servidor pressionando CTRL+C.
 
-d) Execute novamente o projeto com a opção --lab. Notou alguma diferença? 
+d) Execute novamente o Metro Blunder com a opção -web. Notou alguma diferença? 
 
 e) Interrompa a execução do servidor pressionando CTRL+C.
 
 
 
-3. Adicionar componentes Angular ao projeto via Ionic CLI.
+3. Adicionar componentes ao projeto. (Criar uma screen e um stylesheet).
 
-a) Execute o projeto com o comando serve.
-
-b) Abra outro terminal no VSCode.
-
-c) Crie uma página com o comando generate. Defina o nome notas para a página.
+a) Pelo VSCode crie uma pasta screens.
 
 d) Acesse a URL localhost:8100/notas. Qual foi o resultado?
 
@@ -150,7 +148,7 @@ t) Envie os arquivos versionados para o git remoto acionando a opção Push. Inf
 
 
 
-4. Adicionar uma plataforma ao projeto Ionic
+4. Executando um projeto na plataforma Android.
 
 a) Adicione a plataforma android com o comando capacitor (Dica: ioni capacitor add). Qual foi o resultado?
 
