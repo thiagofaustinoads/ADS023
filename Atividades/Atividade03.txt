@@ -18,35 +18,80 @@ b) Execute o Metro Blunder com o comando expo start. Foi exibida a página no na
 
 c) Pelo Metro Blunder, rode o projeto Atividade03 pelo web browser. 
 
-c) Interrompa a execução do servidor pressionando CTRL+C.
+d) Interrompa a execução do servidor pressionando CTRL+C.
 
-d) Execute novamente o Metro Blunder com a opção -web. Notou alguma diferença? 
-
-e) Interrompa a execução do servidor pressionando CTRL+C.
-
-
-
-3. Trabalhar os elementos screen, props, state e style do projeto React Native.
-
-a) No arquivo App.js apague o retorno da função App deixando vazio.
-
-b) Apague o conteúdo do método Stylesheet.create().
-
-c) Execute o projeto no navegador pelo Metro Blunder. Qual foi o resultado?
-
-d) Faça a função App retornar <View></View>. Recarregue a página do app no navegador e observe o resultado.
-
-e) Atribua o estilo { backgroundColor: 'red' } a tag View (Dica: <View style={{ backgroundColor: 'red'}}>).
-
-f) Altere o estilo backgroundColor para backgroud-color. Recarregue a página do app no navegador e observe o resultado.
-
-g) Apa
+e) Execute novamente o Metro Blunder com a opção --web. Notou alguma diferença? 
 
 f) Interrompa a execução do servidor pressionando CTRL+C.
 
 
 
-4. Executando um projeto na plataforma Android.
+3. Trabalhando com o código JSX do projeto React Native.
+
+a) No arquivo App.js apague o retorno da função App deixando vazio.
+
+export default function App() {
+  return (
+  );
+}
+
+b) Execute o projeto no navegador pelo Metro Blunder. Qual foi o resultado?
+
+c) Faça a função App retornar um componente View. Qual foi o resultado?
+
+  return ( 
+     <View></View>
+  );
+
+d) Faça a função App retornar dois componentes View. Qual foi o resultado?
+
+  return ( 
+     <View></View>
+     <View></View>
+  );
+
+e) Faça a função App retornar um componente View contedo outro componente View>. Qual foi o resultado?
+
+  return ( 
+     <View>
+        <View></View>     
+     </View>
+  );
+
+f) Atribua o estilo { backgroundColor: 'red' } a primeira View.
+
+  return ( 
+     <View style={{ backgroundColor: 'red' }}>
+        <View></View>
+     </View>
+  );
+
+g) Altere o estilo backgroundColor para background-color. Qual foi o resultado?
+
+h) Altere o estilo da primeira View para styles.container (Dica style={ styles.container }).
+
+i) Desclare um estilo titulo dentro da variável styles contendo as propriedades fontWeight: bold e color: 'red'.
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+    titulo: {
+    fontWeight: 'bold',
+    color: 'red'
+  }
+});
+
+j) Acrescente o estilo titulo a primeira View (Dica: <View style={ [styles.container, styles.titulo] }>).
+
+k) Interrompa a execução do servidor pressionando CTRL+C.
+
+
+
+5. Executando um projeto na plataforma Android.
 
 a) Abra o Android Studio no menu Configure->AVDManager para configurar um dispostivo virtual.
 
