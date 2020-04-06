@@ -1,149 +1,239 @@
-1. Criar um projeto usando Ionic CLI.
+1. Criar um formulário de login com React Native.
 
 a) Abra o aplicativo VSCode.
 
 b) Selecione a pasta ADS023 e abra o terminal pressionando CTRL+'.
 
-c) Crie um novo projeto Ionic chamado Atividade05 usando o template em branco.
+c) Crie um novo projeto React Native chamado Atividade05 usando o template em branco.
 
-d) Execute o projeto criado.
+d) Crie uma pasta screens dentro do projeto. 
 
-e) Abra outro terminal no VSCode.
+e) Crie um arquivo Login.js dentro da pasta screens.
 
+e) No arquivo Login.js import os pacotes do React e ReactNative
 
+Digite a estrutura básica de um componente React Native no arquivo Login.js.
 
-2. Simular a navegação de páginas no Ionic.
+import 'React' from 'react';
+impor { StyleSheet, View, Text } from 'react-native;
 
-a) Crie uma página chamada login.
-
-b) Faça a página login ser exibida através da rota raiz (Dica: alterar a propriedade redirectTo da rota '' no arquivo app-routing.module.ts).
-
-c) Adicione na página login um ion-button ENTRAR para acessar a página home. Atribua a diretiva [routerLink] o valor '/home'. 
-
-d) Adicione na página home um ion-button SAIR para acessar a página login. Atribua a diretiva [routerLink] o valor ''.
-
-e) No navegador acione os botões para acessar as páginas da aplicação. Qual foi o resultado? 
-
-f) Crie uma página chamada detalhes.
-
-g) Adicione na barra de ferramentas da página detalhes um ion-back-button.
-
-h) Adicione um parâmetro id na rota '/detalhes'.
-
-i) Adicione na página home um io-button DETALHES para acessar página detalhes. Atribua a diretiva [routerLink] o valor '/detalhes/42'.
-
-j) No navegador acione os botões para navegar entre as páginas. Qual foi o resultado? 
-
-k) Adicione na página detalhes um ion-label para exibir o valor do parâmetro id (Dica: use a interpolação {{ id }}).
-
-l) Adicione na classe DetalhesPageModule um atributo id inicializando com null.
-
-m) Injete no construtor da classe DetalhesPageModule um atributo privado activatedRoute do tipo ActivatedRoute. 
-
-n) No método ngOnInit() faça o atributo id receber o valor do parâmetro da rota.
-
-this.id = this.activatedRoute.snapshot.paramMap.get('id');
-
-o) No navegador acione os botões para navegar entre as páginas. Qual foi o resultado? 
-
-
-
-3. Simular a navegação de abas no Ionic.
-
-a) Adicione uma página abas ao projeto.
-
-b) Altere o conteúdo do arquivo abas.page.html para usar o Tabs Layout.
-
-c) Adicione as páginas aba1, aba2 e aba3 sendo filhas de abas (Dica: informar a pasta abas no nome da página).
-
-d) Declare uma constante routes do tipo Routes no módulo abas.module.ts. Inicialize com um array vazio.
-
-const routes: Route = [];
-
-e) Adicione uma rota para a página abas. Ela deve carrgar o componente AbasPage e ter rotas filhas.
-
-{
-  path: 'abas',
-  component: AbasPage,
-  children: []
-},
-
-f) Defina as rotas filhas para as páginas aba1, aba2 e aba3 dentro da rota 'abas'. Cada uma deve ter rotas filhas.
-
-{
-  path: 'aba1',
-  children: []
-},
-{
-  path: 'aba2',
-  children: []
-},
-{
-  path: 'aba2',
-  children: []
+export default function Login() {
+  return (
+     <View>
+     </View>
+  );
 }
 
-g) Defina uma rota filha dentro da rota aba1. Ela deve carregar o módulo da página aba1.
 
-{
-  path: '',
-  loadChildren: '../abas/aba1.module#Aba1PageModule'
-}
+f) Crie um elemento ion-app dentro do corpo da página. 
 
-h) Defina uma rota filha dentro da rota aba2. Ela deve carregar o módulo da página aba2.
+<ion-app></ion-app>
 
-i) Defina uma rota filha dentro da rota aba3. Ela deve carregar o módulo da página aba3.
+g) Dentro do elemento ion-app crie um elemento ion-grid. Adicione a propriedade fixed para o elemento.
 
-j) Adicione uma rota raiz dentro de routes. Ela deve ser redirecionada para a aba1.
+<ion-grid fixed></ion-grid>
 
-{
-    path: '',
-    redirectTo: '/abas/aba1',
-    pathMatch: 'full'
-}
+h) Dentro do elemento ion-grid crie um elemento ion-row. Adicione as propriedades justify-content-center align-items-center para o elemento.
 
-k) Faça o módulo abas.module.ts carregar a constante routes.
+<ion-row justify-content-center align-items-center></ion-row>
 
-RouterModule.forChild(routes)
+i) Dentro do elemento ion-row crie um elemento ion-col. Atribua as propriedades size-md="4" para o elemento. 
 
-l) Adicione na página home um ion-button ABAS para acessar a página abas. Atribua a diretiva [routerLink] o valor '/abas'.
+<ion-col size-md="4"></ion-col>
 
-m) No navegador acione os botões para navegar entre as páginas. Qual foi o resultado? 
+j) Dentro do elemento ion-col crie um formulário. Atribua a propriedade action="lista-requerimento.html" para o formulário.
+
+<form action="lista-requerimentos.html"></form>
+
+k) Dentro do formulário crie uma divisão, dois elementos ion-item e outra divisão. Atribua as propriedades margin-vertical e text-center para ambas divisões e a propriedade padding apenas para a segunda divisão.
+
+<div margin-vertical text-center></div>
+<ion-item></ion-item>
+<ion-item></ion-item>
+<div margin-vertical padding text-center></div>
+
+l) Dentro do primeira divisão adicione a logo vermelha do IESB e um titulo principal.
+
+<img src="logo_vermelha.png" alt="iesb"/>
+<h1><ion-text><strong>aluno</strong></ion-text><ion-text color="medium"><strong>online</strong></ion-text></h1>
+
+m) Dentro do primeio elemento ion-item crie os elementos ion-label e ion-input para o campo Matrícula.
+
+<ion-label position="floating">Matrícula</ion-label>
+<ion-input type="number" required autofocus></ion-input>
+
+n) Dentro do segundo elemento ion-item crie os elementos ion-label e ion-input para o campo Senha.
+
+<ion-label position="floating">Senha</ion-label>
+<ion-input type="password" required></ion-input>
+
+o) Dentro da segunda divisão adicione um elemento ion-button. Atribua as propriedades type="submit" color="danger" e expand="block" para o elemento.
+
+<ion-button type="submit" color="danger" expand="block">Entrar</ion-button>
+
+p) Abra o arquivo index.hml no navegador Chrome. Ative as ferramentas do desenvolvedor pressionando a tecla F12 ou CTRL+SHIFT+I.
+
+q) Pressione as teclas Ctrl+Shift+M para ativar o modo de visualização em dispositivos móveis. Escolha um tamanho para visualizar a página.
 
 
 
-4. Criar guarda de rota no Ionic.
+2. Criar uma página de lista de requerimentos com Ionic e JavaScript.
 
-a) Crie um servico chamado auth (Dica: ionic generate service auth).
+a) Crie um arquivo lista-requerimentos.html acionando o menu New File com o botão direito sobre a pasta Atividade02.
 
-b) Dentro da classe AuthService declare o atributo estático autenticado inicializando com false (Dica: static autenticado: boolean = false;).
+b) Digite a estrutura básica de uma página HTML5.
 
-c) Dentro da classe AuthService declare o método login(). Faça ele alterar o atributo autenticado para true.
+c) Importe o CDN do Framework Ionic antes da tag </head>.
 
-d) Dentro da classe AuthService declare o método logout(). Faça ele alterar o atributo autenticado para false.
+d) Crie um elemento ion-app dentro do corpo da página. 
 
-e) Dentro da classe AuthService declare o método isAutenticado(). Faça ele retornar o valor do atributo autenticado.
+e) Dentro do elemento ion-app crie um elemento ion-header e um elemento ion-content.
 
-f) Crie um guarda chamado auth (Dica: ionic generate guard auth).
+<ion-header></ion-header>
+<ion-content></ion-content>
 
-g) Faça a classe AuthGuard implementar a interface CanActivate. 
+f) Dentro do elemento ion-header crie um elemento ion-toolbar. Atribua a propriedade color="danger" para o elemento.
 
-h) Injete no construtor da classe AuthGuard um atributo privado authService do tipo AuthService.
+<ion-toolbar color="danger"></ion-toolbar>
 
-i) Implemente o método canActivate() para que ele retorne o resultado da chamada ao método isAutenticado() de authService.
+g) Dentro do elemento ion-toolbar crie um elemento ion-img, um elemento ion-title e um elemento ion-buttons. Atribua as propriedades src="logo_branca.png" alt="iesb" style="height: 36px; width: 52px;" slot="start" para o elemento ion-img e a propriedade slot="end" para o elemento ion-buttons.
 
-j) Altere as rotas '/home', '/detalhes' e 'abas' para checarem o guarda AuthGuard (Dica: acrescente a propriedade canActivate: [AuthGuard]).
+<ion-img src="logo_branca.png" alt="iesb" style="height: 36px; width: 52px;" slot="start"></ion-img>
+<ion-title>Aluno Online</ion-title>
+<ion-buttons slot="end"></ion-buttons>
 
-k) Injete no construtor da classe LoginPage um atributo privado authService do tipo AuthService.
+h) Dentro do elemento ion-buttons crie um elemento ion-button. Atribua a propriedade href="index.html" para o elemento.
 
-l) No método ngOnInit() da classe LoginPage chame o método logout() de authService.
+<ion-button href="index.html"></ion-button>
 
-m) Injete no construtor da classe HomePage um atributo privado authService do tipo AuthService.
+i) Dentro do elemento ion-button crie um elemento ion-icon. Atribua a propriedade name="exit" para o elemento.
 
-n) No método ngOnInit() da classe HomePage chame o método login() de authService.
+<ion-icon name="exit"></ion-icon>
 
-o) No navegador acione os botões para navegar entre as páginas. Qual foi o resultado? 
+j) Dentro do elemento ion-content crie um elemento ion-list.
 
-p) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade05).
+<ion-list></ion-list>
 
-q) Envie os arquivos versionados para o git remoto acionando a opção Push. Informe usuário/senha e acione a opção Sign in.
+k) Dentro do elemento ion-list crie um elemento ion-list-header, um ion-item-divider e dois elementos ion-item. Atribua a propriedade color="light" para o elemento ion-item-divider.
+
+<ion-list-header></ion-list-header>
+<ion-item-divider color="light"></ion-item-divider>
+<ion-item></ion-item>
+<ion-item></ion-item>
+
+l) Dentro do elemento ion-list-header crie um elemento ion-label.
+
+<ion-label></ion-label>
+
+m) Dentro do elemento ion-label crie um título para Seus requerimentos. 
+
+<h2><strong>Seus requerimentos</strong></h2>
+
+n) Dentro do elemento ion-item-divider crie um elemento ion-label.
+
+o) Dentro do elemento ion-label crie um título para Análise de Desenvolvimento de Sistemas Período 20191. Atribua a propriedade text-wrap ao elemento.
+
+<ion-label text-wrap>
+    <h3>Análise e Desenvolvimento de Sistemas</h3>
+    <h3>Período 20191</h3>
+</ion-label>
+
+p) Dentro do primeiro elemento ion-item crie um elemento ion-label e um elemento ion-icon para o requerimento da disciplina ADS023 - Programação para Dispositivos Móveis. Adicione a propriedade text-wrap ao elemento.
+
+<ion-label text-wrap>
+    <h3>ADS023 - Programação para Dispositivos Móveis</h3>
+    <p>Prova A1</p>
+</ion-label>
+<ion-icon name="checkmark-circle" color="success" slot="end"></ion-icon>
+
+q) Dentro do segundo elemento ion-item crie um elemento ion-label e um elemento ion-icon para o requerimento da disciplina RCT024 - Gerência de Projetos. Adicione a propriedade text-wrap ao elemento.
+
+<ion-label>
+    <h3>RCT024 - Gerência de Projetos</h3>
+    <p>Prova A2</p>
+</ion-label>
+<ion-icon name="close-circle" color="danger" slot="end"></ion-icon>
+
+r) Adicione após o elemento ion-list um elemento ion-fab. Atribua as propriedades vertical="bottom" horizontal="end" slot="fixed" para o elemento.
+
+<ion-fab vertical="bottom" horizontal="end"></ion-fab>
+
+s) Dentro do elemento ion-fab adicione um elemento ion-fab-button. Atribua as propriedades href="novo-requerimento.html" color="danger" para o elemento.
+
+<ion-fab-button href="novo-requerimento.html" color="danger"></ion-fab-button>
+
+t) Dentro do elemento ion-fab-button crie um elemento ion-icon. Atribua a propriedade name="add" ao elemento.
+
+<ion-icon name="add"></ion-icon>
+
+u) Abra o arquivo lista-requerimentos.hml no navegador Chrome. Ative as ferramentas do desenvolvedor pressionando a tecla F12 ou CTRL+SHIFT+I.
+
+v) Pressione as teclas Ctrl+Shift+M para ativar o modo de visualização em dispositivos móveis. Escolha um tamanho para visualizar a página.
+
+
+
+3. Criar uma página de novo com Ionic e JavaScript.
+
+a) Crie um arquivo novo-requerimento.html acionando o menu New File com o botão direito sobre a pasta Atividade02.
+
+b) Digite a estrutura básica de uma página HTML5.
+
+c) Importe o CDN do Framework Ionic antes da tag </head>.
+
+d) Crie um formulário dentro do corpo da página. Atribua a propriedade action="lista-requerimentos.html" para o formulário.
+
+e) Crie um elemento ion-app dentro do formulário. 
+
+f) Dentro do elemento ion-app crie um elemento ion-header e um elemento ion-content. Atribua a propriedade padding-top para o segundo elemento.
+
+g) Dentro do elemento ion-header crie um elemento ion-toolbar. Atribua a propriedade color="danger" para o elemento.
+
+h) Dentro do elemento ion-toolbar crie um elemento ion-buttons, um elemento ion-title e outro elemento ion-buttons. Atribua a propriedade slot="start" para o primeiro ion-buttons e a propriedade slot="end" para o segundo ion-buttons.
+
+<ion-buttons slot="start"></ion-buttons>
+<ion-title>Novo requerimento</ion-title>
+<ion-buttons slot="end"></ion-buttons>
+
+i) Dentro do primeiro ion-buttons crie um elemento ion-button. Atribua a propriedade href="lista-requerimentos.html" para o elemento.
+
+<ion-button href="lista-requerimentos.html"></ion-button>
+                    
+j) Dentro do elemento ion-button crie um elemento ion-icon. Atribua a propriedade name="arrow-back" para o elemento.
+
+<ion-icon name="arrow-back"></ion-icon>
+
+k) Dentro do segundo ion-buttons crie um elemento ion-button contendo o texto Salvar. Atribua a propriedade type="submit" para o elemento.
+
+l) Dentro do elemento ion-content crie três elementos ion-item.
+
+m) Dentro do primeiro ion-item crie um elemento ion-label e um elemento ion-select para o campo Disciplina.
+
+<ion-label position="floating">Disciplina</ion-label>
+<ion-select placeholder="Selecione uma disciplina">
+  <ion-select-option value="ADS023">ADS023 - Programação para Dispositivos Móveis</ion-select-option>
+  <ion-select-option value="RCT024">RCT024 - Gerência de Projetos</ion-select-option>
+</ion-select>
+  
+n) Dentro do segundo ion-item crie um elemento ion-label e um elemento ion-select para o campo Prova.
+
+<ion-label position="floating">Prova</ion-label>
+<ion-select placeholder="Selecione uma prova">
+  <ion-select-option value="A1">A1</ion-select-option>
+  <ion-select-option value="A2">A2</ion-select-option>
+  <ion-select-option value="A3">A3</ion-select-option>
+</ion-select>
+
+o) Dentro do terceiro ion-item crie um elemento ion-label e um elemento ion-textarea para o campo Argumentação.
+
+<ion-label position="floating">Argumentação</ion-label>
+<ion-textarea required></ion-textarea>
+
+p) Abra o arquivo novo-requerimento.hml no navegador Chrome. Ative as ferramentas do desenvolvedor pressionando a tecla F12 ou CTRL+SHIFT+I.
+
+q) Pressione as teclas Ctrl+Shift+M para ativar o modo de visualização em dispositivos móveis. Escolha um tamanho para visualizar a página.
+
+r) Pressione as teclas Ctrl+Shift+G para acessar o painel do Git. Em seguida, clique em Stage All.
+
+s) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade02).
+
+t) Envie os arquivos versionados para o git remoto acionando a opção Push. Informe usuário/senha e acione a opção Sign in.
