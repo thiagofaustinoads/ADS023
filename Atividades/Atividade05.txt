@@ -10,7 +10,7 @@ d) Crie uma pasta screens dentro do projeto.
 
 e) Crie um arquivo Login.js dentro da pasta screens.
 
-e) No arquivo Login.js import os pacotes do React e ReactNative
+f) No arquivo Login.js import os pacotes do React e ReactNative
 
 Digite a estrutura básica de um componente React Native no arquivo Login.js.
 
@@ -23,6 +23,13 @@ export default function Login() {
      </View>
   );
 }
+
+const styles = StyleSheet.create({
+});
+
+g) Crie um estilo 
+
+
 
 
 f) Crie um elemento ion-app dentro do corpo da página. 
