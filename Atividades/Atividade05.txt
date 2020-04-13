@@ -1,4 +1,4 @@
-1. Criar um formulário de login com React Native.
+1. Criar um projeto React Native.
 
 a) Abra o aplicativo VSCode.
 
@@ -6,18 +6,317 @@ b) Selecione a pasta ADS023 e abra o terminal pressionando CTRL+'.
 
 c) Crie um novo projeto React Native chamado Atividade05 usando o template em branco.
 
-d) Crie uma pasta screens dentro do projeto. 
+d) Pelo terminal do VSCode, acesse a pasta atividade05 e instale o componente react-native-vector-icons.
 
-e) Crie um arquivo Login.js dentro da pasta screens.
+npm install --save react-native-vector-icons
 
-f) No arquivo Login.js import os pacotes do React e ReactNative
+e) Pelo Windows crie um atalho da pasta node_modules\react-native-vector-icons\Fonts dentro da pasta assets do projeto atividade05.
 
-Digite a estrutura básica de um componente React Native no arquivo Login.js.
+f) Altere a função App para retornar somente um componente View.
+
+return (
+  <View style={styles.container}>
+  </View>
+);
+
+g) Altere o estilo container para conter as propriedades abaixo.
+
+container: {
+  flex: 1,
+  backgroundColor: '#fff'
+}
+
+h) Execute o projeto no modo web (Dica: expo start --web).
+
+
+
+2. Criar uma tela login com React Native.
+
+a) Crie uma pasta screens dentro do projeto. 
+
+b) Crie um arquivo Login.js dentro da pasta screens.
+
+c) No arquivo Login.js importe os pacotes do React e ReactNative.
 
 import 'React' from 'react';
-impor { StyleSheet, View, Text } from 'react-native;
+impor { StyleSheet, View } from 'react-native;
+
+d) Digite a estrutura básica de um componente React Native no arquivo Login.js.
 
 export default function Login() {
+  return (
+     <View style={styles.container}>
+     </View>
+  );
+}
+
+const styles = StyleSheet.create({
+});
+
+e) Dentro da variável styles, crie um estilo container com as propriedades abaixo. 
+
+container: {
+  paddingTop: 100,
+  paddingLeft: 20,
+  paddingRight: 20
+},
+
+f) Dentro da View principal crie três componentes View. No primeiro componente atribua o estilo { alignItems: 'center' }, no segundo atribua o estilo { paddingTop: 16 } e no terceiro o estilo { paddingTop: 32 }.
+
+<View style={{ alignItems: 'center' }}></View>
+<View style={{ paddingTop: 16 }}></View>
+<View style={{ paddingTop: 32 }}></View>
+
+g) Dentro do primeiro View, adicione um componente Image que deve carregar a imagem iesb_vermelha.png (Dica: obtenha a image do github e salve na pasta assets). 
+
+<Image style={styles.logo} source={require('../assets/logo_vermelha.png')} />
+
+h) Na variável styles, crie um estilo logo com as propriedades abaixo.
+
+logo: {
+  height: 68,
+  width: 68
+},
+
+i) Dentro do primeiro View, adicione um componente View com o estilo { flexDirection: 'row', paddingTop: 16 } contendo um componente Text como elemento filho.
+
+<View style={{ flexDirection: 'row', paddingTop: 16 }}>
+   <Text style={styles.title}></Text>
+</View>
+
+j) Dentro da variável sytles, crie um estilo title contendo as propriedades abaixo.
+
+title: {
+  fontFamily: 'Arial',
+  fontSize: 26,
+  fontWeight: 'bold'
+},
+
+k) Dentro do componente Text adicione dois componentes Text para exibir o título alunoonline. Atribua ao segundo componente o estilo { color: '#92949c' }.
+
+<Text>aluno</Text><Text style={{ color: '#92949c' }}>online</Text>
+
+l) Dentro do segundo View criado no item f), adicione dois componentes TextInput, uma para ler matrícula e outro para a senha.
+
+<TextInput style={styles.input} placeholder='Matrícula' keyboardType='numeric' require='true' />
+<TextInput style={styles.input} placeholder='Senha' secureTextEntry={true} require='true' />
+
+m) Dentro da variável sytles, crie um estilo input contendo as propriedades abaixo.
+
+input: {
+  height: 40,
+  padding: 8,
+  marginTop: 8,
+  borderBottomWidth: 1,
+  borderColor: '#c1c4cd',
+  fontFamily: 'Arial',
+  fontSize: 16
+}
+
+n) Dentro do terceiro View criado no item f), adicione um componente Button.
+
+<Button color='red' title='Entrar' />
+
+o) Na função App, acrescente o componente Login dentro de View para exibir a screen Login.js (Dica: importe a função Login a partir de './screens/Login'.
+
+
+
+3. Criar uma tela de lista de requerimentos com React Native.
+
+a) Crie um arquivo Lista.js dentro da pasta screens.
+
+b) No arquivo Lista.js importe os pacotes do React, ReactNative. Importe também o componente Icon do pacote 'react-native-vector-icons/AntDesign'.
+
+c) Carregue a lista de ícones da fonte AntDesign.
+
+Icon.loadFont();
+
+d) Crie uma constante requerimentos que deve armazenar um array de objetos JS que representam os requerimentos registrados pelo aluno.
+
+const requerimentos = [
+  {
+    title: { curso: 'Análise e Desenvolvimento de Sistemas', periodo: '20191' },
+    data: [
+      { id: 1, disciplina: 'ADS023 - Programação para Dispositivos Móveis', prova: 'Prova A1', status: 'D' },
+      { id: 2, disciplina: 'RCT024 - Gerência de Projetos', prova: 'Prova A2', status: 'I' }
+    ]
+  },
+];
+
+e) Digite a estrutura básica de um componente React Native no arquivo Lista.js.
+
+export default function Lista() {
+  return (
+     <View style={styles.container}>
+     </View>
+  );
+}
+
+const styles = StyleSheet.create({
+});
+
+f) Dentro da variável styles, crie um estilo container com as propriedades abaixo. 
+
+container: {
+  flex: 1
+},
+
+g) Dentro da View principal crie dois componentes View, um componente SectionList e um componente TouchableOpacity.
+
+<View style={styles.header1}></View>
+<View style={styles.header2}></View>
+<SectionList/>
+<TouchableOpacity style={styles.fab}></TouchableOpacity>
+
+h) Dentro da variável sytles, crie os estilos header1, header2 e fab. Atribua as seguintes propriedades a cada um deles.
+
+header1: {
+  height: 56,
+  backgroundColor: 'red',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  paddingLeft: 8,
+  paddingRight: 8
+},
+header2: {
+  paddingLeft: 16,
+  height: 40,
+  justifyContent: 'center',
+  paddingBottom: 8,
+  paddingTop: 8
+},
+fab: {
+  position: 'absolute',
+  bottom: 10,
+ right: 10
+}
+
+i) Dentro do primeiro View, adicione um componente Image que deve carregar a imagem iesb_branca.png (Dica: obtenha a image do github e salve na pasta assets). 
+
+<Image style={styles.logo} source={require('../assets/logo_branca.png')} />
+
+j) Na variável styles, crie um estilo logo com as propriedades abaixo.
+
+logo: {
+  height: 32,
+  width: 32,
+  marginRight: 8
+},
+
+k) Dentro do primeiro View, adicione um componente View com o estilo { flexDirection: 'row', paddingTop: 16 } contendo um componente Text como elemento filho.
+
+l) Dentro do primeiro View, adicione um componente Text para exibir o título do aplicativo.
+
+<Text style={styles.title1}>Aluno Online</Text>
+
+m) Na variável styles, crie um estilo title1 com as propriedades abaixo. 
+
+title1: {
+  fontFamily: 'Arial',
+  fontSize: 20,
+  fontWeight: '500',
+  color: 'white'
+},
+
+n) Dentro do primeiro View, adicione um componente TouchableOpacity com um Icon que represente a ação de logout.
+
+<TouchableOpacity><Icon name="logout" color='white' size={20} /></TouchableOpacity>
+
+o) Dentro do segundo View, adicione um componente Text para exibir o título Seus requerimentos.
+
+<Text style={styles.title2}>Seus requerimentos</Text>
+
+p) Na variável styles, crie um estilo title2 com as propriedades abaixo. 
+
+title2: {
+  fontFamily: 'Arial',
+  fontSize: 20,
+  fontWeight: '500'
+},
+
+q) No componente SectionList atribua a propriedades section, keyExtractor, renderSectionHeader e renderItem o valores abaixo. 
+
+<SectionList
+  sections={requerimentos}
+  keyExtractor={item => item.id}
+  renderSectionHeader={({ section }) => {
+      return (
+         <View style={styles.header3}>
+              <Text style={styles.title3}>{section.title.curso}</Text>
+              <Text style={styles.title3}>Período {section.title.periodo}</Text>
+         </View>
+      )
+  }}
+  renderItem={({ item }) => {
+     const icon = (item.status == 'D') ? { name: 'checkcircle', color: '#10dc60' } : { name: 'closecircle', color: '#f04141' };
+     return (
+       <View style={styles.list}>
+           <View style={{ paddingTop: 10, paddingBottom: 10 }}>
+               <Text style={styles.title4}>{item.disciplina}</Text>
+               <Text style={[styles.title4, { color: '#92949c' }]}>{item.prova}</Text>
+           </View>
+           <View style={styles.status}>
+                <Icon name={icon.name} size={21} color={icon.color} />
+           </View>
+        </View>
+      );
+  }}
+/>
+
+r) Na variável styles, crie os estilo header3, title3, list, title4 e status com as respectivas propriedades abaixo. 
+
+header3: {
+  paddingLeft: 16,
+  height: 50,
+  justifyContent: 'center',
+  paddingBottom: 8,
+  paddingTop: 8,
+  backgroundColor: '#f4f5f8',
+  flexDirection: 'column'
+},
+title3: {
+  fontFamily: 'Arial',
+  fontSize: 14,
+  fontWeight: '500'
+},
+list: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  borderBottomWidth: 1,
+  borderColor: '#c1c4cd',
+  marginLeft: 16
+},
+title4: {
+  fontFamily: 'Arial',
+  fontSize: 14,
+},
+status: {
+  position: 'absolute',
+  right: 8
+},
+
+s) Dentro do último TouchableOpacity adicione um Icon para representar a ação Adicionar.
+
+<Icon name="pluscircle" size={56} color='red' />
+
+t) Na função App, troque o componente Login dentro de View pelo componente Lista para exibir a screen Lista.js (Dica: importe a função Lista a partir de './screens/Lista'.
+
+
+
+4. Criar um tela de novo requerimento com React Native.
+
+a) Crie um arquivo Novo.js dentro da pasta screens.
+
+b) No arquivo Novo.js importe os pacotes do React, ReactNative. Importe também o componente Icon do pacote 'react-native-vector-icons/AntDesign'.
+
+c) Carregue a lista de ícones da fonte AntDesign.
+
+Icon.loadFont();
+
+d) Digite a estrutura básica de um componente React Native no arquivo Novo.js.
+
+export default function Novo() {
   return (
      <View>
      </View>
@@ -27,220 +326,96 @@ export default function Login() {
 const styles = StyleSheet.create({
 });
 
-g) Crie um estilo 
+e) Dentro da View principal crie dois componentes View.
 
+<View style={styles.header}></View>
+<View style={{ paddingLeft: 16 }}></View>
 
+f) Dentro da variável styles, adicione o estilo header com as propriedades abaixo.
 
+header: { 
+   height: 56, 
+   backgroundColor: 'red', 
+   flexDirection: 'row', 
+   alignItems: 'center', 
+   justifyContent: 'space-between', 
+   paddingLeft: 8, 
+   paddingRight: 8 
+},
 
-f) Crie um elemento ion-app dentro do corpo da página. 
+g) Dentro do primeiro View, adicione um componente TouchableOpacity para exibir o Icon da ação Voltar. 
 
-<ion-app></ion-app>
+<TouchableOpacity>
+  <Icon name="left" size={20} color='white' />
+</TouchableOpacity>
 
-g) Dentro do elemento ion-app crie um elemento ion-grid. Adicione a propriedade fixed para o elemento.
+h) Dentro do primeiro View, adicione um componente Text para o título da tela.
 
-<ion-grid fixed></ion-grid>
+<Text style={styles.title}>Novo Requerimento</Text>
 
-h) Dentro do elemento ion-grid crie um elemento ion-row. Adicione as propriedades justify-content-center align-items-center para o elemento.
+i) Dentro da variável styles, adicione o estilo title com as propriedades abaixo.
 
-<ion-row justify-content-center align-items-center></ion-row>
+title: { 
+   fontFamily: 'Arial', 
+   fontSize: 20, 
+   fontWeight: '500', 
+   color: 'white'
+},
 
-i) Dentro do elemento ion-row crie um elemento ion-col. Atribua as propriedades size-md="4" para o elemento. 
+j) Dentro do primeiro View, adicione um componente Button para a ação Salvar.
 
-<ion-col size-md="4"></ion-col>
+<Button color='red' title='Salvar'/>
 
-j) Dentro do elemento ion-col crie um formulário. Atribua a propriedade action="lista-requerimento.html" para o formulário.
+k) Dentro do segundo View, adicione um componente Text e um componente Picker para representar o campo de Disciplina, um componente Text e um componente Picker para representar o campo de Prova, e um componente TextInput para o campo Argumentação.
 
-<form action="lista-requerimentos.html"></form>
+<Text style={styles.label}>Disciplina</Text>
+<Picker></Picker>
+<Text style={styles.label}>Prova</Text>
+<Picker></Picker>
+<TextInput style={styles.textarea}/>
 
-k) Dentro do formulário crie uma divisão, dois elementos ion-item e outra divisão. Atribua as propriedades margin-vertical e text-center para ambas divisões e a propriedade padding apenas para a segunda divisão.
+l) Dentro da variável styles, adicione os estilos label e textarea com as propriedades abaixo.
 
-<div margin-vertical text-center></div>
-<ion-item></ion-item>
-<ion-item></ion-item>
-<div margin-vertical padding text-center></div>
+label: { 
+  fontFamily: 'Arial', 
+  fontSize: 13, 
+  color: '#92949c', 
+  paddingTop: 16, 
+  paddingBottom: 8 
+},
+textarea: { 
+  borderBottomWidth: 1, 
+  borderColor: '#c1c4cd', 
+  paddingTop: 16 
+}
 
-l) Dentro do primeira divisão adicione a logo vermelha do IESB e um titulo principal.
+m) Dentro do primeiro Picker adicione as disciplinas ADS023 - Programação para Dispositivos Móveis e RCT024 - Gerência de Projetos.
 
-<img src="logo_vermelha.png" alt="iesb"/>
-<h1><ion-text><strong>aluno</strong></ion-text><ion-text color="medium"><strong>online</strong></ion-text></h1>
+<Picker.Item label='Selecione uma disciplina' value='' />
+<Picker.Item label='ADS023 - Programação para Dispositivos Móveis' value='ADS023' />
+<Picker.Item label='RCT024 - Gerência de Projetos' value='RCT024' />
 
-m) Dentro do primeio elemento ion-item crie os elementos ion-label e ion-input para o campo Matrícula.
+n) Dentro do segundo Picker adicione as provas A1, A2 e A3.
 
-<ion-label position="floating">Matrícula</ion-label>
-<ion-input type="number" required autofocus></ion-input>
+<Picker.Item label='Selecione uma prova' value='' />
+<Picker.Item label='Prova A1' value='A1' />
+<Picker.Item label='Prova A2' value='A2' />
+<Picker.Item label='Prova A3' value='A3' />
 
-n) Dentro do segundo elemento ion-item crie os elementos ion-label e ion-input para o campo Senha.
+o) Defina as propriedades placeholder, placeholderTextColor, multiline e numberOfLines para o componente TextInput.
 
-<ion-label position="floating">Senha</ion-label>
-<ion-input type="password" required></ion-input>
+<TextInput
+   style={styles.textarea}
+   placeholder='Argumentação'
+   placeholderTextColor='#92949c'
+   multiline={true}
+   numberOfLines={4}
+/>
 
-o) Dentro da segunda divisão adicione um elemento ion-button. Atribua as propriedades type="submit" color="danger" e expand="block" para o elemento.
+p) Na função App, troque o componente Lista dentro de View pelo componente Novo para exibir a screen Novo.js (Dica: importe a função Novo a partir de './screens/Novo'.
 
-<ion-button type="submit" color="danger" expand="block">Entrar</ion-button>
+q) Pressione as teclas Ctrl+Shift+G para acessar o painel do Git. Em seguida, clique em Stage All.
 
-p) Abra o arquivo index.hml no navegador Chrome. Ative as ferramentas do desenvolvedor pressionando a tecla F12 ou CTRL+SHIFT+I.
+r) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade05).
 
-q) Pressione as teclas Ctrl+Shift+M para ativar o modo de visualização em dispositivos móveis. Escolha um tamanho para visualizar a página.
-
-
-
-2. Criar uma página de lista de requerimentos com Ionic e JavaScript.
-
-a) Crie um arquivo lista-requerimentos.html acionando o menu New File com o botão direito sobre a pasta Atividade02.
-
-b) Digite a estrutura básica de uma página HTML5.
-
-c) Importe o CDN do Framework Ionic antes da tag </head>.
-
-d) Crie um elemento ion-app dentro do corpo da página. 
-
-e) Dentro do elemento ion-app crie um elemento ion-header e um elemento ion-content.
-
-<ion-header></ion-header>
-<ion-content></ion-content>
-
-f) Dentro do elemento ion-header crie um elemento ion-toolbar. Atribua a propriedade color="danger" para o elemento.
-
-<ion-toolbar color="danger"></ion-toolbar>
-
-g) Dentro do elemento ion-toolbar crie um elemento ion-img, um elemento ion-title e um elemento ion-buttons. Atribua as propriedades src="logo_branca.png" alt="iesb" style="height: 36px; width: 52px;" slot="start" para o elemento ion-img e a propriedade slot="end" para o elemento ion-buttons.
-
-<ion-img src="logo_branca.png" alt="iesb" style="height: 36px; width: 52px;" slot="start"></ion-img>
-<ion-title>Aluno Online</ion-title>
-<ion-buttons slot="end"></ion-buttons>
-
-h) Dentro do elemento ion-buttons crie um elemento ion-button. Atribua a propriedade href="index.html" para o elemento.
-
-<ion-button href="index.html"></ion-button>
-
-i) Dentro do elemento ion-button crie um elemento ion-icon. Atribua a propriedade name="exit" para o elemento.
-
-<ion-icon name="exit"></ion-icon>
-
-j) Dentro do elemento ion-content crie um elemento ion-list.
-
-<ion-list></ion-list>
-
-k) Dentro do elemento ion-list crie um elemento ion-list-header, um ion-item-divider e dois elementos ion-item. Atribua a propriedade color="light" para o elemento ion-item-divider.
-
-<ion-list-header></ion-list-header>
-<ion-item-divider color="light"></ion-item-divider>
-<ion-item></ion-item>
-<ion-item></ion-item>
-
-l) Dentro do elemento ion-list-header crie um elemento ion-label.
-
-<ion-label></ion-label>
-
-m) Dentro do elemento ion-label crie um título para Seus requerimentos. 
-
-<h2><strong>Seus requerimentos</strong></h2>
-
-n) Dentro do elemento ion-item-divider crie um elemento ion-label.
-
-o) Dentro do elemento ion-label crie um título para Análise de Desenvolvimento de Sistemas Período 20191. Atribua a propriedade text-wrap ao elemento.
-
-<ion-label text-wrap>
-    <h3>Análise e Desenvolvimento de Sistemas</h3>
-    <h3>Período 20191</h3>
-</ion-label>
-
-p) Dentro do primeiro elemento ion-item crie um elemento ion-label e um elemento ion-icon para o requerimento da disciplina ADS023 - Programação para Dispositivos Móveis. Adicione a propriedade text-wrap ao elemento.
-
-<ion-label text-wrap>
-    <h3>ADS023 - Programação para Dispositivos Móveis</h3>
-    <p>Prova A1</p>
-</ion-label>
-<ion-icon name="checkmark-circle" color="success" slot="end"></ion-icon>
-
-q) Dentro do segundo elemento ion-item crie um elemento ion-label e um elemento ion-icon para o requerimento da disciplina RCT024 - Gerência de Projetos. Adicione a propriedade text-wrap ao elemento.
-
-<ion-label>
-    <h3>RCT024 - Gerência de Projetos</h3>
-    <p>Prova A2</p>
-</ion-label>
-<ion-icon name="close-circle" color="danger" slot="end"></ion-icon>
-
-r) Adicione após o elemento ion-list um elemento ion-fab. Atribua as propriedades vertical="bottom" horizontal="end" slot="fixed" para o elemento.
-
-<ion-fab vertical="bottom" horizontal="end"></ion-fab>
-
-s) Dentro do elemento ion-fab adicione um elemento ion-fab-button. Atribua as propriedades href="novo-requerimento.html" color="danger" para o elemento.
-
-<ion-fab-button href="novo-requerimento.html" color="danger"></ion-fab-button>
-
-t) Dentro do elemento ion-fab-button crie um elemento ion-icon. Atribua a propriedade name="add" ao elemento.
-
-<ion-icon name="add"></ion-icon>
-
-u) Abra o arquivo lista-requerimentos.hml no navegador Chrome. Ative as ferramentas do desenvolvedor pressionando a tecla F12 ou CTRL+SHIFT+I.
-
-v) Pressione as teclas Ctrl+Shift+M para ativar o modo de visualização em dispositivos móveis. Escolha um tamanho para visualizar a página.
-
-
-
-3. Criar uma página de novo com Ionic e JavaScript.
-
-a) Crie um arquivo novo-requerimento.html acionando o menu New File com o botão direito sobre a pasta Atividade02.
-
-b) Digite a estrutura básica de uma página HTML5.
-
-c) Importe o CDN do Framework Ionic antes da tag </head>.
-
-d) Crie um formulário dentro do corpo da página. Atribua a propriedade action="lista-requerimentos.html" para o formulário.
-
-e) Crie um elemento ion-app dentro do formulário. 
-
-f) Dentro do elemento ion-app crie um elemento ion-header e um elemento ion-content. Atribua a propriedade padding-top para o segundo elemento.
-
-g) Dentro do elemento ion-header crie um elemento ion-toolbar. Atribua a propriedade color="danger" para o elemento.
-
-h) Dentro do elemento ion-toolbar crie um elemento ion-buttons, um elemento ion-title e outro elemento ion-buttons. Atribua a propriedade slot="start" para o primeiro ion-buttons e a propriedade slot="end" para o segundo ion-buttons.
-
-<ion-buttons slot="start"></ion-buttons>
-<ion-title>Novo requerimento</ion-title>
-<ion-buttons slot="end"></ion-buttons>
-
-i) Dentro do primeiro ion-buttons crie um elemento ion-button. Atribua a propriedade href="lista-requerimentos.html" para o elemento.
-
-<ion-button href="lista-requerimentos.html"></ion-button>
-                    
-j) Dentro do elemento ion-button crie um elemento ion-icon. Atribua a propriedade name="arrow-back" para o elemento.
-
-<ion-icon name="arrow-back"></ion-icon>
-
-k) Dentro do segundo ion-buttons crie um elemento ion-button contendo o texto Salvar. Atribua a propriedade type="submit" para o elemento.
-
-l) Dentro do elemento ion-content crie três elementos ion-item.
-
-m) Dentro do primeiro ion-item crie um elemento ion-label e um elemento ion-select para o campo Disciplina.
-
-<ion-label position="floating">Disciplina</ion-label>
-<ion-select placeholder="Selecione uma disciplina">
-  <ion-select-option value="ADS023">ADS023 - Programação para Dispositivos Móveis</ion-select-option>
-  <ion-select-option value="RCT024">RCT024 - Gerência de Projetos</ion-select-option>
-</ion-select>
-  
-n) Dentro do segundo ion-item crie um elemento ion-label e um elemento ion-select para o campo Prova.
-
-<ion-label position="floating">Prova</ion-label>
-<ion-select placeholder="Selecione uma prova">
-  <ion-select-option value="A1">A1</ion-select-option>
-  <ion-select-option value="A2">A2</ion-select-option>
-  <ion-select-option value="A3">A3</ion-select-option>
-</ion-select>
-
-o) Dentro do terceiro ion-item crie um elemento ion-label e um elemento ion-textarea para o campo Argumentação.
-
-<ion-label position="floating">Argumentação</ion-label>
-<ion-textarea required></ion-textarea>
-
-p) Abra o arquivo novo-requerimento.hml no navegador Chrome. Ative as ferramentas do desenvolvedor pressionando a tecla F12 ou CTRL+SHIFT+I.
-
-q) Pressione as teclas Ctrl+Shift+M para ativar o modo de visualização em dispositivos móveis. Escolha um tamanho para visualizar a página.
-
-r) Pressione as teclas Ctrl+Shift+G para acessar o painel do Git. Em seguida, clique em Stage All.
-
-s) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade02).
-
-t) Envie os arquivos versionados para o git remoto acionando a opção Push. Informe usuário/senha e acione a opção Sign in.
+s) Envie os arquivos versionados para o git remoto acionando a opção Push. Informe usuário/senha e acione a opção Sign in.
