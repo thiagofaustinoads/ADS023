@@ -28,6 +28,8 @@ container: {
 
 h) Execute o projeto no modo web (Dica: expo start --web).
 
+i) Abra no navegador a URL https://oblador.github.io/react-native-vector-icons/ para exibir a lista de ícones AntDesign.
+
 
 
 2. Criar uma tela login com React Native.
