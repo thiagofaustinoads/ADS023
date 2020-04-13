@@ -6,7 +6,7 @@ b) Selecione a pasta ADS023 e abra o terminal pressionando CTRL+'.
 
 c) Crie um novo projeto React Native chamado Atividade04 usando o template em branco.
 
-d) Execute o projeto React Native no navegador.
+d) Execute o projeto React Native no navegador (Dica: expo start --web).
 
 e) Crie uma pasta chamada components.
 
@@ -48,7 +48,7 @@ return (
 
 n) Altere o estilo container de App.js para ter apenas as propriedades flex e backgroundColor.
 
-o) No arquivo Header.js, defina um estilo container com as propriedades height, paddingLeft, paddingRight, justifyContent, borderBottomWidth e borderColor definidos.
+o) No arquivo Header.js, defina na variável styles um estilo container com as propriedades abaixo.
 
 container: {
   height: 56,
@@ -63,7 +63,7 @@ p) Atribua o estilo container ao componente View de Header.js.
 
 <View style={styles.container}>
 
-q) No arquivo Header.js, defina um estilo title com as propriedades fontFamily, fontSize, fontWeight e color.
+q) No arquivo Header.js, defina na variável styles um estilo title com as propriedades abaixo.
 
 title: {
   fontFamily: 'Arial',
@@ -80,7 +80,7 @@ s) Na função Header adicione o parâmetro props.
 
 t) Faça o componente Text da função Header exibir o conteúdo de props.children.
 
-<Text style={styles.title}>props.children}</Text>
+<Text style={styles.title}>{props.children}</Text>
 
 u) Faça o componente Header da função App exibir o texto Meu App.
 
@@ -88,13 +88,106 @@ u) Faça o componente Header da função App exibir o texto Meu App.
 
 
 
-2. Criar uma tela no React Native.
+2. Trabalhar com a propriedade Flex para estilizar uma tela.
+
+a) Crie uma pasta screens dentro do projeto. 
+
+b) Crie um arquivo TelaFlex.js dentro da pasta screens.
+
+c) No arquivo TelaFlex.js importe os pacotes do React e ReactNative.
+
+import 'React' from 'react';
+impor { StyleSheet, View } from 'react-native;
+
+d) Declare uma classe TelaFlex que herde da classe Component, exportando-a como padrão.
+
+export default class TelaFlex extends Componente {
+}
+
+e) Implemente a função render para retornar um componente View.
+
+render() {
+  return(
+     <View></View>
+  );
+}
+
+f) Declare uma constante styles inicializando-a com um objeto StyleSheet.
+
+g) Defina na variável styles os estilos primeiro, segundo e terceiro com as propriedades abaixo.
+
+primeiro: {
+   flex: 1,
+   backgroundColor: 'red',
+},
+segundo: {
+   flex: 2,
+   backgroundColor: 'blue',
+},
+terceiro: { 
+   flex: 3,
+   backgroundColor: 'green',
+}
+
+h) Dentro do componente View, adicione três componente View. Atribuia o estilo primeiro, segundo e terceiro respetivamente.
+
+<View style={styles.primeiro}></View>
+<View style={styles.segundo}></View>
+<View style={styles.terceiro}></View>
+
+i) Dentro do arquivo App.js importe o componente TelaFlex.
+
+import TelaFlex from './screens/TelaFlex';
+
+j) Adicione no componente View da função App um componente TelaFlex.
 
 
-3. Trabalhar com FlexBox
 
-) Pressione as teclas Ctrl+Shift+G para acessar o painel do Git. Em seguida, clique em Stage All.
+3. Trabalhar com a propriedade Flex Direction para estilizar uma tela.
 
-) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade04).
+a) Crie um arquivo TelaFlexDirection.js dentro da pasta screens.
 
-) Envie os arquivos versionados para o git remoto acionando a opção Push. Informe usuário/senha e acione a opção Sign in.
+b) No arquivo TelaFlexDirection.js importe os pacotes do React e ReactNative.
+
+c) Declare uma classe TelaFlexDirection que herde da classe Component, exportando-a como padrão.
+
+d) Implemente a função render para retornar um componente View.
+
+e) Declare uma constante styles inicializando-a com um objeto StyleSheet.
+
+f) Defina na variável styles os estilos principal, primeiro, segundo e terceiro com as propriedades abaixo.
+
+principal: {
+  flex: 1,
+  flexDirection: 'row',
+}
+
+primeiro: {
+   width: 50,
+   height: 50,
+   backgroundColor: 'powderblue',
+},
+segundo: {
+   width: 50,
+   height: 50,
+   backgroundColor: 'skyblue',
+},
+terceiro: { 
+   width: 50,
+   height: 50,
+   backgroundColor: 'steelblue',
+}
+
+g) Atribua o estilo principal ao componente View.
+
+h) Dentro do componente View, adicione três componente View. Atribuia o estilo primeiro, segundo e terceiro respetivamente.
+
+i) Dentro do arquivo App.js importe o componente TelaFlexDirection.
+
+j) Na função App troque o componente TelaFlex pelo componente TelaFlexDirection.
+
+k) Pressione as teclas Ctrl+Shift+G para acessar o painel do Git. Em seguida, clique em Stage All.
+
+l) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade04).
+
+m) Envie os arquivos versionados para o git remoto acionando a opção Push. Informe usuário/senha e acione a opção Sign in.
