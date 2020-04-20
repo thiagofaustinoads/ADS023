@@ -53,7 +53,7 @@ a) Crie uma tela chamada Lista.js.
 
 b) Dentro do arquivo Lista.js implemente a estrutura básica de um componente screen do React Native.
 
-c) Adicione os pâmetros route e navigation à função Lista.
+c) Adicione os parâmetros route e navigation à função Lista.
 
 export default function Lista({route, navigation}) {
 }
@@ -64,6 +64,7 @@ return (
   <View style={styles.container}>
   <Button title="Novo contato"/>
   <FlatList style={styles.container}/>    
+  </View>
 );
 
 e) Crie uma constante styles contendo um estilo container para ser aplicado ao FlatList.
@@ -138,24 +139,63 @@ import Lista from './Lista';
 
 4. Criar um cadastro de contados no React Native.
 
-a) Instale os componentes Formik e yup.
-
-b) 
-
 a) Crie uma tela chamada Novo.js.
 
 b) Dentro do arquivo Novo.js implemente a estrutura básica de um componente screen do React Native.
 
-g) Adicione outro componente Stack.Screen para criar uma rota para a tela Novo.
+c) Adicione os pâmetros route e navigation à função Novo.
+
+export default function Novo({route, navigation}) {
+}
+
+d) Faça a função Lista retornar somente um componente View contendo um Button e dois TextInput.
+
+return (
+  <View style={styles.container}>
+        <Button title="Salvar"/>
+        <TextInput placeholder="Nome" style={styles.input} />    
+        <TextInput placeholder="Telefone" style={styles.input} />    
+  </View>
+);
+
+e) Crie uma constante styles contendo um estilo container para ser aplicado ao FlatList e um estilo input para ser aplicado aos TextInput.
+
+const sytles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff'
+  },
+  input: {
+    borderBottomWidth: 1, 
+    borderColor: '#c1c4cd', 
+    paddingTop: 16 
+  }
+});
+
+f) Declare um estado contato inicializando com um objeto JS.
+
+const [contato, setContato] = useState({key: Math.random().toString(), nome: "", telefone: ""});
+
+g) Adicione a propriedade onChangeText do TextInput nome para atualizar o estado contato.nome.
+
+h) Adicione a propriedade onChangeText do TextInput telefone para atualizar o estado contato.telefone.
+
+i) Adicione na função Novo uma constante salvarContato que deve navegar para a rota Lista. Ele deve passar o valor do estado contato..
+
+const salvarContato = () => {
+   navigation.navigate('Lista', contatos);
+}
+
+j) Adicione outro componente Stack.Screen para criar uma rota para a tela Novo.
 
 <Stack.Screen name='Lista' component={Novo}/>
 
-i) Importe o componente Novo a partir do pacote Novo.
+k) Importe o componente Novo a partir do pacote Novo.
 
 import Novo from './Novo';
 
-) Pressione as teclas Ctrl+Shift+G para acessar o painel do Git. Em seguida, clique em Stage All.
+l) Pressione as teclas Ctrl+Shift+G para acessar o painel do Git. Em seguida, clique em Stage All.
 
-) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade06).
+m) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade06).
 
-) Envie os arquivos versionados para o git remoto acionando a opção Push. Informe usuário/senha e acione a opção Sign in.
+n) Envie os arquivos versionados para o git remoto acionando a opção Push. Informe usuário/senha e acione a opção Sign in.
