@@ -1,75 +1,161 @@
-1. Criar um projeto usando Ionic CLI.
+1. Criar um projeto React Native.
 
 a) Abra o aplicativo VSCode.
 
 b) Selecione a pasta ADS023 e abra o terminal pressionando CTRL+'.
 
-c) Crie um novo projeto Ionic chamado Atividade06 usando o template em branco.
+c) Crie um novo projeto React Native chamado Atividade06 usando o template em branco.
 
-d) Execute o projeto criado.
+d) Pelo terminal do VSCode, acesse a pasta atividade06 e instale o componente React Navigation.
 
-e) Abra outro terminal no VSCode.
+npm install @react-navigation/native @react-navigation/stack
+expo install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
 
+e) Importe o pacote react-native-gesture-handler no arquivo App.js.
 
+import 'react-native-gesture-handler';
 
-2. Criar um menu lateral com o Ionic.
-
-a) Crie uma página chamada menu.
-
-b) Crie uma página chamada opcoes.
-
-c) Faça a página menu ser exibida através da rota raiz.
-
-d) Altere o conteúdo da página menu para conter um ion-menu e um ion-router-outlet.
-
-e) Atribua a propriedade contentId ao menu o valor main-menu. Faça o router referenciar o menu pela proriedade id.
-
-f) Dentro do menu adicione um ion-header e um ion-content.
-
-g) Dentro do cabeçalho do menu adicione um ion-toolbar. Atribua a cor primary.
-
-h) Dentro da barra de ferramenta adicione um ion-title Menu.
-
-i) Dentro do conteúdo do menu crie um ion-menu-toggle para a página home. Utilize um ion-item para representar o item de menu Home contendo a propriedade routerLink para a rota '/home'. Inclua no item de menu o ion-icon home.
-
-j) Dentro do conteúdo do menu crie um ion-menu-toggle para a página opcoes. Utilize um ion-item para representar o item de menu Opções contendo a propriedade routerLink para a rota '/opcoes'. Inclua no item de menu o ion-icon settings.
-
-k) Altere o conteúdo da página home para conter um ion-header e um ion-content.
-
-l) Adicione no cabeçalho da página home um ion-toolbar e um ion-title Home. 
-
-m) Adicione na barra de ferramentas da página home um ion-menu-button. Faça ele ser exibido na esquerda através da propriedade slot.
-    
-n) Altere o conteúdo da página opcoes para conter um ion-header e um ion-content.
-
-o) Adicione no cabeçalho da página opcoes um ion-toolbar e um ion-title Home. 
-
-p) Adicione na barra de ferramentas da página opcoes um ion-menu-button. Faça ele ser exibido na esquerda através da propriedade slot.   
-
-q) No navegador acione os itens de menu para navegar entre as páginas. Qual foi o resultado? 
-
-r) Adicione na página menu um ion-split-pane. Faça esse elemento englobar o ion-menu e o ion-router-outlet.
-
-s) Recarregue a página menu no navegador simulando a tela de um tablet. Qual foi o resultado? 
+f) Execute o projeto no modo web (Dica: expo start --web).
 
 
 
-3. Acionar o menu utilizando um MenuController.
+2. Criar um componente de navegação do React Navigation.
 
-a) Adicione no conteúdo da página home um ion-menu-toggle.
+a) Importe o componente NavigationContainer do pacote @react-navigation/native.
 
-b) Adicione no toggle um ion-button. Atribua o texto Toggle Menu.
+import { NavigationContainer } from '@react-navigation/native';
 
-c) Adicione no conteúdo da página home um ion-button. Atribua o texto Abrir Menu. Atribua a propriedade (click) com o valor openMenu().
+b) Altere a função App para retornar somente um componente NavigationContainer.
 
-d) Injete no construtor da classe HomePageModule um atributo privado menuCtrl do tipo MenuControle. 
+return (
+  <NavigationContainer>
+  </NavigationContainer>
+);
 
-e) Dentro da classe HomePageModule declare o método openMenu(). Faça o método exibir o menu pelo menuCtrl.
+c) Importe o componente createStackNavigator do pacote @react-navigation/stack.
 
-this.menuCtrl.open('menu-main)
+import { createStackNavigator } from '@react-navigation/stack';
 
-f) No navegador acione os botoes para acessar o menu. Qual foi o resultado? 
+d) Declare uma constante Stack inicializando com o retorno da função createStackNavigator();
 
-g) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade06).
+const Stack = createStackNavigator();
 
-h) Envie os arquivos versionados para o git remoto acionando a opção Push. Informe usuário/senha e acione a opção Sign in.
+e) Adicione o componente Stack.Navigator no componente NavigatorContainer.
+
+<Stack.Navigator>
+</Stack.Navigator>
+
+
+
+3. Criar uma listagem de contatos no React Native.
+
+a) Crie uma tela chamada Lista.js.
+
+b) Dentro do arquivo Lista.js implemente a estrutura básica de um componente screen do React Native.
+
+c) Adicione os pâmetros route e navigation à função Lista.
+
+export default function Lista({route, navigation}) {
+}
+
+d) Faça a função Lista retornar somente um componente View contendo um Button e um FlatList.
+
+return (
+  <View style={styles.container}>
+  <Button title="Novo contato"/>
+  <FlatList style={styles.container}/>    
+);
+
+e) Crie uma constante styles contendo um estilo container para ser aplicado ao FlatList.
+
+const sytles = StyleSheet.create({
+container: {
+  flex: 1,
+  backgroundColor: '#fff'
+}
+});
+
+f) Declare um estado contatos inicializando com um array vazio.
+
+const [contatos, setContatos] = useState([]);
+
+g) Adione na função Lista uma constante exibirItem que deve receber uma arrow function contendo o parâmetro { item } e retornar com componente View contendo dois componentes Text, um para exibir o item.nome o outro para exibir o item.telefone.
+
+const exibirItem = ({ item }) => {
+    return (
+       <View style={styles.item}>
+          <Text style={styles.nome}>{item.nome}</Text>
+          <Text style={styles.telefone}>{item.telefone}</Text>
+       </View>
+    );   
+}
+
+h) Adicione os estilos item, nome e telefonte contendo as seguintes propriedades.
+
+item: {
+   flexDirection: 'row',
+   alignItems: 'center',
+   justifyContent: 'space-between',
+   padding: 16,
+   boderBottomWidth: 1,
+   borderColor: '#c1c4cd',
+},
+nome: {
+   flex: 1,
+   fontFamily: 'Arial',
+   fontSize: 18,
+   fontWeight: '500',
+},
+titulo: {
+   fontFamily: 'Arial',
+   fontSize: 14,
+   fontWeight: '500',
+},   
+
+i) Adicione no componente FlatList a propriedade data atribuindo o objeto contatos e a propriedade renderItem atribuido a funcao exibirItem
+
+  <FlatList style={styles.container} data={contatos} renderItem={exibirItem}/>
+
+j) Adicione na função Lista uma constante novoContato que deve navegar para a rota Novo.
+
+const novoContato = () => {
+   navigation.navigate('Novo');
+}
+
+k) Adicione no componente Button a propriedade onPress atribuindo a função novoContato.
+
+<Button title="Novo contato" onPress={novoContato}/>
+
+l) Adicione o componente Stack.Screen no componente Stack.Navigator para criar uma rota para a tela Lista.
+
+<Stack.Screen name='Lista' component={Lista}/>
+
+m) Importe o componente Lista a partir do pacote Lista.
+
+import Lista from './Lista';
+
+
+
+4. Criar um cadastro de contados no React Native.
+
+a) Instale os componentes Formik e yup.
+
+b) 
+
+a) Crie uma tela chamada Novo.js.
+
+b) Dentro do arquivo Novo.js implemente a estrutura básica de um componente screen do React Native.
+
+g) Adicione outro componente Stack.Screen para criar uma rota para a tela Novo.
+
+<Stack.Screen name='Lista' component={Novo}/>
+
+i) Importe o componente Novo a partir do pacote Novo.
+
+import Novo from './Novo';
+
+) Pressione as teclas Ctrl+Shift+G para acessar o painel do Git. Em seguida, clique em Stage All.
+
+) Efetive o commit acionando a opção Commit All. Não esqueça de por um comentário ao commit (Ex.: Criando o projeto Atividade06).
+
+) Envie os arquivos versionados para o git remoto acionando a opção Push. Informe usuário/senha e acione a opção Sign in.
