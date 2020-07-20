@@ -1,1 +1,1 @@
-Criar uma listagem de requerimentos do app AlunoOnline utilizando Android SDK.
+- Criar uma listagem de requerimentos do app AlunoOnline utilizando Android SDK.

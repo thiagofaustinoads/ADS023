@@ -1,2 +1,1 @@
-Fazer o app AlunoOnline autenticar um usuário utilizando Firebase.
-
+- Fazer o app AlunoOnline autenticar um usuário utilizando Firebase.

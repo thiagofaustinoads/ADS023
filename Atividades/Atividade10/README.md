@@ -1,1 +1,1 @@
-Fazer o app AlunoOnline salvar dados utilizando SQLite.
+- Fazer o app AlunoOnline salvar dados utilizando SQLite.
