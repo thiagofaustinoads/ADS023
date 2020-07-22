@@ -6,7 +6,7 @@ function f(y) {
     if (x > y) {
         var z = y
     }
-    
+
     console.log(z) // acessivel em qualquer parte da funcao
 }
 
@@ -18,7 +18,7 @@ for (let i = 0; i < j; i++) {
     if (i % 2 == 0) {
         let k = true
     }
-    
+
     console.log(k) // inacessivel pois soh existe no bloco if
 }
 
