@@ -1,17 +1,14 @@
 /*
  * var possui escopo da funcao
  */
-function inverter(x, y) {
+var x = 10
+function f(y) {
     if (x > y) {
         var z = y
-        x = y
-        y = z
     }
     
     console.log(z) // acessivel em qualquer parte da funcao
 }
-
-inverter(10, 2)
 
 /*
  * let possui escopo do bloco
