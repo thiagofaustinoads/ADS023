@@ -12,8 +12,8 @@
    - Configure o usuário e email do git.
 
    ```bash
-      git config --global user.email "you@example.com"
-      git config --global user.name "Your Name"
+      git config --global user.email "voce@exemplo.com"
+      git config --global user.name "Seu Nome"
    ```
 
 3. Enviar atividades para o repositório no Github.
