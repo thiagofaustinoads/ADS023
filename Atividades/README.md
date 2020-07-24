@@ -1,7 +1,7 @@
 # Instruções
 
-1. Criar um fork deste repositório para sua conta no GitHub.
-2. Configurar VSCode para acessar o repositório forked no GitHub.
+1. Criar um fork deste repositório para sua conta do GitHub.
+2. Configurar VSCode para acessar o fork do repositório.
 
    - Abra o aplicativo VSCode.
    - Pressione as teclas Ctrl+Shift+P e selecione o comando Git: Clone.
