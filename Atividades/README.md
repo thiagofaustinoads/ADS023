@@ -8,7 +8,7 @@
    - Preencha a URL <https://github.com/SEU-LOGIN/ADS023.git> e pressione ENTER para clonar o repositório.
    - Selecione a pasta C:\Users\SUA-MATRICULA\Documentos para onde o repositório será clonado.
    - Prossiga acionando a opção Open para abrir a pasta do repositório clonado.
-   - Pressione as teclas Ctrl+' para abrir um terminal.
+   - Pressione as teclas Ctrl+' (Windows) ou Ctrl+Shift+´ (Linux) para abrir um terminal.
    - Configure o usuário e email do git.
 
    ```bash
